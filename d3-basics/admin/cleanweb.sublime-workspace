@@ -1,0 +1,1176 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tex",
+				"text-anchor"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"wid",
+				"width-20"
+			],
+			[
+				"tr",
+				"translate	.attr('transform', 'translate(0,0)')"
+			],
+			[
+				"te",
+				"text-anchor"
+			],
+			[
+				"sta",
+				"stateid"
+			],
+			[
+				"rad",
+				"radar"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"line",
+				"linestring"
+			],
+			[
+				"fi",
+				"file_path"
+			],
+			[
+				"po",
+				"poly_list"
+			],
+			[
+				"ge",
+				"get_files_names_from_folder"
+			],
+			[
+				"de",
+				"decode_polyline"
+			],
+			[
+				"or",
+				"origin"
+			],
+			[
+				"we",
+				"webpath"
+			],
+			[
+				"ve",
+				"verbose_directive	AngularJS"
+			],
+			[
+				"mo",
+				"verbose_module	AngularJS"
+			],
+			[
+				"pol",
+				"polystring"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"pa",
+				"packageName"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"cs",
+				"csv_to_flare"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"t",
+				"target	Attr"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"mag",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"get",
+				"getUnique"
+			],
+			[
+				"Da",
+				"DataFrame"
+			],
+			[
+				"wei",
+				"weight_size"
+			],
+			[
+				"veh",
+				"veh_list"
+			],
+			[
+				"ef",
+				"ef_list"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"com",
+				"commodity"
+			],
+			[
+				"gr",
+				"graph"
+			],
+			[
+				"co",
+				"commodity"
+			],
+			[
+				"data",
+				"dataNest"
+			],
+			[
+				"dat",
+				"dataNest"
+			],
+			[
+				"sced",
+				"schedule"
+			],
+			[
+				"col",
+				"columns"
+			],
+			[
+				"dri",
+				"drivescheduleid"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"dr",
+				"drivescheduleid"
+			],
+			[
+				"B",
+				"BSFC"
+			],
+			[
+				"sc",
+				"Schedule_ID"
+			],
+			[
+				"select",
+				"selectAll"
+			],
+			[
+				"stro",
+				"stroke-dasharray"
+			],
+			[
+				"p",
+				"p_tot"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"ghg",
+				"ghgsum"
+			],
+			[
+				"__",
+				"__ghg__"
+			],
+			[
+				"len",
+				"length-1"
+			],
+			[
+				"d",
+				"data0"
+			],
+			[
+				"tes",
+				"testAjax"
+			],
+			[
+				"styles",
+				"stylesheets"
+			],
+			[
+				"in",
+				"innerRadius"
+			],
+			[
+				"Inn",
+				"innerRadius"
+			],
+			[
+				"to",
+				"totalton"
+			],
+			[
+				"ns",
+				"nstart"
+			],
+			[
+				"di",
+				"distance"
+			],
+			[
+				"fill",
+				"fill-opacity"
+			],
+			[
+				"nst",
+				"nstart-1"
+			],
+			[
+				"da",
+				"data0"
+			],
+			[
+				"web",
+				"webapp2"
+			],
+			[
+				"render",
+				"render_template"
+			],
+			[
+				"write",
+				"writerow"
+			],
+			[
+				"Cs",
+				"CSVtoDB"
+			],
+			[
+				"EV",
+				"EV_Scenario"
+			],
+			[
+				"Ev",
+				"EVscenario"
+			],
+			[
+				"fu",
+				"fuel_eff_electric"
+			],
+			[
+				"Pe",
+				"PercentEV"
+			],
+			[
+				"coun",
+				"country"
+			],
+			[
+				"count",
+				"country"
+			],
+			[
+				"regio",
+				"regions"
+			],
+			[
+				"quer",
+				"query2db"
+			],
+			[
+				"s",
+				"sqlq"
+			],
+			[
+				"ex",
+				"exhaust"
+			],
+			[
+				"Pass",
+				"passenger"
+			],
+			[
+				"L",
+				"Lat"
+			],
+			[
+				"pl",
+				"plant_list"
+			],
+			[
+				"route",
+				"route_list"
+			],
+			[
+				"map",
+				"map_canvas"
+			],
+			[
+				"csv",
+				"csvContent"
+			],
+			[
+				"spee",
+				"speed_status"
+			],
+			[
+				"json",
+				"jsonlist"
+			],
+			[
+				"lin",
+				"linecolor"
+			],
+			[
+				"jso",
+				"jsonlist"
+			],
+			[
+				"lef",
+				"leftindex"
+			],
+			[
+				"le",
+				"leftindex"
+			],
+			[
+				"ld",
+				"leftindent"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"se",
+				"selectAll"
+			],
+			[
+				"v",
+				"visibility"
+			],
+			[
+				"CO",
+				"CO2"
+			],
+			[
+				"e",
+				"emfac"
+			],
+			[
+				"fuel",
+				"fuelrate"
+			],
+			[
+				"c",
+				"co"
+			],
+			[
+				"j",
+				"jsonOut"
+			],
+			[
+				"scr",
+				"screenOn"
+			],
+			[
+				"o",
+				"ogr2ogr_to_shp"
+			],
+			[
+				"Tr",
+				"Truck_set"
+			],
+			[
+				"change",
+				"changeSpeed"
+			],
+			[
+				"P",
+				"Pac"
+			],
+			[
+				"tra",
+				"trans_ef"
+			],
+			[
+				"df",
+				"df2"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/Mike/d3_live_code_1/index.html",
+			"settings":
+			{
+				"buffer_size": 25533,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Mike/d3_live_code_1/css/setosa.css",
+			"settings":
+			{
+				"buffer_size": 6133,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Mike/d3_live_code_1/css/codemirror.css",
+			"settings":
+			{
+				"buffer_size": 6367,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "   \n      <div class=\"well\">\n        <iframe id=\"preview\" scrolling =\"no\" frameborder=\"0\" height=\"480px\" width=\"100%\"></iframe>\n        <hr>\n        <textarea id=\"code\" name=\"code\">\n<!DOCTYPE html>\n<html>\n<style>\n  body{\n    font-size: 18px;\n    font-family: \"Lato\", \"PT Serif\", serif;\n    text-align: center;\n  }\n\n  .y.axis path,\n  .axis line {\n    fill: none;\n    stroke: #fff;\n    stroke-width: 0.5px;\n    shape-rendering: crispEdges;\n  }\n\n  .x.axis{\n    font-size: 13px;\n  }\n\n  .x.axis path{\n    stroke: #000;\n    fill: none;\n  }\n\n  .areaIB {\n    fill: #76AACB;\n    opacity: 0.45;\n  }\n\n  .line{\n    fill: none;\n    stroke: #ca8546;\n    stroke-width: 2px;\n    stroke-dasharray: 10,5;\n  }\n\n  .linetrue{\n    fill: none;\n    stroke: #000;\n    stroke-width: 2px;\n  }\n\n  .IBmed{\n    fill: none;\n    stroke: #2D3B68;\n    stroke-width: 2px;\n    stroke-dasharray: 10,5;\n  }\n\n  .griderror{\n    fill: none;\n    stroke: #fff;\n    stroke-width: 0.5px;\n    stroke-dasharray: 10,5;\n  }\n\n  .grid{\n    fill: none;\n    stroke: #e0dfdf;\n    stroke-width: 0.5px;\n    stroke-dasharray: 10,5;\n  }\n\n  .box{\n    stroke: none;\n    fill: #f5f4f3;\n  }\n\n\n  line.arrow {\n      stroke: #666;\n      stroke-width: 1px;\n  }\n\n\n</style>\n\n<!-- load libraries here -->\n<script src=\"http://d3js.org/d3.v3.js\"></script>\n<script src=\"http://d3js.org/queue.v1.min.js\"></script>\n<script src=\"http://d3js.org/topojson.v1.min.js\"></script>\n\n\n<body>\n\n</body>\n\n<script type=\"text/javascript\">  // write your d3.js code here\n  // buffer edges with a margin\n  var margin = {top: 20, right: 20, bottom: 30, left: 65},\n    width = 450 - margin.left - margin.right,\n    height = 450 - margin.top - margin.bottom;\n\n  var formatTime = d3.time.format(\"%H:%M\"), // Convert time object into hour and minutes\n      parseTime = d3.time.format(\"%H:%M:%S\").parse; // convert hour and minutes to time format\n\n  var x = d3.time.scale()\n      .range([0, width]); \n\n  var y = d3.scale.linear()\n      .range([height, 0]);\n\n  var xAxis = d3.svg.axis()\n      .scale(x)\n      .orient(\"bottom\")\n      .ticks(7) // number of time ticks\n      .tickFormat(formatTime)\n\n  var yAxis = d3.svg.axis()\n      .scale(y)\n      .orient(\"left\")\n      .ticks(7)\n\n  /* Remove to show grid (1/2)\n  var grid = d3.svg.axis()\n      .scale(y)\n      .orient(\"left\")\n      .tickSize(-width, 0, 0)\n      .tickFormat(\"\")\n  */\n  \n  var lineIBave = d3.svg.line()\n        .interpolate(\"monotone\")\n        .x(function(d) { return x(d.minutes); })\n        .y(function(d) { return y(d.IBave); });\n\n  /* Remove to show median (1/2)\n  var lineIBmed = d3.svg.line()\n        .interpolate(\"monotone\") // https://github.com/mbostock/d3/wiki/SVG-Shapes#line_interpolate\n        .x(function(d) {  return x(d.minutes); })\n        .y(function(d) { return y(d.IBmed); });\n  */\n\n  /* Remove to show area (1/2)\n  var areaIB = d3.svg.area()\n      .interpolate(\"monotone\")\n      .x(function(d) { return x(d.minutes); })\n      .y0(function(d) { return y(d.IB10); })\n      .y1(function(d) { return y(d.IB90); });\n  */\n\n  var svg = d3.select(\"body\").append(\"svg\")\n      .attr(\"width\", width + margin.left + margin.right)\n      .attr(\"height\", height + margin.top + margin.bottom)\n    .append(\"g\")\n      .attr(\"transform\", \"translate(\" + (margin.left) + \",\" + (margin.top) + \")\"); //\n\n\n  // Ridership Data from SFMTA\n  d3.csv(\"data/38_Geary_ridership_stats.csv\", function(error, data) {\n    \n    // Loop through data, updating the data formats\n    data.forEach(function(d) {\n      d.minutes = parseTime(d.minutes);\n      d.IBmed = +d.IBmed;\n      d.IBave = d.IBave;\n      d.IB10 = +d.IB10;\n      d.IB90 = +d.IB90;\n    });\n\n    // update the domain, or the range of results show.\n    x.domain(d3.extent(data, function(d) { return d.minutes; })).nice();\n    y.domain([0,80]).nice();\n\n\n    /* Remove to show background (1/1)\n    svg.append(\"rect\")\n      .attr(\"class\", \"box\")\n      .attr(\"width\", width)\n      .attr(\"height\", height)\n\n    */\n\n    /* Remove to show grid (2/2)\n    svg.append(\"g\")\n        .attr(\"class\", \"grid\")\n        .call(grid)\n    */\n\n\n    /* Remove to show text (1/1)\n    svg.append(\"text\")\n      .attr(\"x\", width/2)\n      .attr(\"y\", 40)\n      .text(\"Inbound Bus\")\n      .style(\"font-size\", 24)\n      //.style(\"text-anchor\", \"middle\"); // \"end\", \"start\"\n    */\n  \n    svg.append(\"g\")\n        .attr(\"class\", \"x axis\")\n        .attr(\"transform\", \"translate(0,\" + height + \")\")\n        .call(xAxis)\n\n    svg.append(\"g\")\n        .attr(\"class\", \"y axis\")\n        .call(yAxis)\n      .append(\"text\")\n        .attr(\"transform\", \"rotate(-90)\")\n        .attr(\"y\", -55)\n        .attr(\"dy\", \".71em\")\n        .style(\"text-anchor\", \"end\")\n        .text(\"Bus Passengers, riders\");\n\n    /* Remove to show area (2/2)\n    svg.append(\"path\")\n        .datum(data)\n        .attr(\"class\", \"areaIB\")\n        .attr(\"d\", areaIB);\n    */\n\n   svg.append(\"path\")\n        .datum(data)\n        .attr(\"class\", \"linetrue\")\n        .attr(\"d\", lineIBave);\n\n    /* Remove to show median (2/2)\n    svg.append(\"path\")\n        .datum(data)\n        .attr(\"class\", \"IBmed\")\n        .attr(\"d\", lineIBmed);\n    */\n\n\n    /* Remove to show legend (1/1)\n    svg.append(\"line\")\n        .attr(\"class\", \"linetrue\")\n        .attr(\"x1\", 253)\n        .attr(\"x2\", 273)\n        .attr(\"y1\", 143)\n        .attr(\"y2\",143)\n    \n    svg.append(\"text\")\n      .attr(\"class\", \"label\")\n      .attr(\"x\", 276)\n      .attr(\"y\", 146)\n      .text(\"Average\")\n\n    svg.append(\"line\")\n        .attr(\"class\", \"IBmed\")\n        .attr(\"x1\", 253)\n        .attr(\"x2\", 273)\n        .attr(\"y1\", 159)\n        .attr(\"y2\",159)\n    \n    svg.append(\"text\")\n      .attr(\"class\", \"label\")\n      .attr(\"x\", 276)\n      .attr(\"y\", 162)\n      .text(\"Median\")\n\n\n    // add text and arrow\n    svg.append(\"defs\").append(\"marker\")\n            .attr(\"id\", \"arrow\")\n            .attr(\"viewBox\", \"0 -5 10 10\")\n            .attr(\"refX\", 8)\n            .attr(\"markerWidth\", 6)\n            .attr(\"markerHeight\", 6)\n            .attr(\"orient\", \"auto\")\n          .append(\"path\")\n            .attr(\"class\", \"marker\")\n            .attr(\"d\", \"M0,-5L10,0L0,5\");\n    \n    svg.append(\"text\")\n        .attr(\"class\", \"label\")\n        .attr(\"x\", 290)\n        .attr(\"y\",  178)\n        .style(\"text-anchor\", \"middle\")\n        .text(\"Middle 80%\");\n    \n    svg.selectAll(\"line.arrow\")\n            .data([2,2])\n          .enter().append(\"svg:line\")\n        .attr(\"class\", \"arrow\")\n        .attr(\"x1\", 280)\n        .attr(\"x2\", 260)\n        .attr(\"y1\", 180)\n        .attr(\"y2\",200)\n        .attr(\"class\", \"link arrow\")\n        .attr(\"marker-end\", \"url(#arrow)\");\n    */\n  });\n</script>\n</html>\n    </textarea>\n  </div>\n  <script>\n          var delay2;\n          // Initialize CodeMirror editor with a nice html5 canvas demo.\n          var editor2 = CodeMirror.fromTextArea(document.getElementById('3lc'), {\n            mode: 'text/html'\n          });\n          editor2.on(\"change\", function() {\n            clearTimeout(delay2);\n            delay = setTimeout(updatePreview2, 300);\n          });\n          \n          function updatePreview2() {\n            var previewFrame2 = document.getElementById('littlecircles');\n            var preview2 =  previewFrame2.contentDocument ||  previewFrame2.contentWindow.document;\n            preview2.open();\n            preview2.write(editor2.getValue());\n            preview2.close();\n          }\n          setTimeout(updatePreview2, 300);\n        </script>",
+			"settings":
+			{
+				"buffer_size": 7386,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Mike/d3_live_code_1",
+		"/Users/Mike/d3_live_code_1/css",
+		"/Users/Mike/d3_live_code_1/data"
+	],
+	"file_history":
+	[
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/commodity_disaggregation_regressions.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/plot_postgresql_results.py",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/plot_postgres_results.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data/radial.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/radial.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/state_thumb_rank.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data/radar.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data/us-states.json",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/Collect FAF data for specific commodities.txt",
+		"/Users/Mike/Documents/QGIS/styles/colorbrewer.xml",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Loop through all OD pairs -- pgRouting.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create pgRouting network.txt",
+		"/Users/Mike/Desktop/test.csv",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Calculate the GHG savings between two isochone.txt",
+		"/Users/Mike/Desktop/test.py",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Match County Centroids to Network Nodes.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Freightsheds US.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Freightsheds California.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds US.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds California.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds rail.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Calculate the GHG savings between two isochone.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Identify Potential Destinations in HWY and Rail network.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Reduce pGrouting network based on specific conditions.text",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds  California.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create US Freightsheds.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create California Freightsheds.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Merge Networks into One Table.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_multimodal.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Add Emission factor to links (Simple).txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_california.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Isochrones in pGrouting.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Isocrones using pGrouting.text",
+		"/Users/Mike/Documents/scripts/PostGIS/Split lines at point on line_hwy.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_rail.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_hwy.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Link networks based on terminals.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Snap points onto closest line.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/geotools.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/google_maps_decode.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/parse_polyline.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/shapelytools.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/pandashp.py",
+		"/Users/Mike/Documents/Data/Transportation Infrastructure/California Truck Network 2011/Nodes and Edges Truck/Create Nodes and Edges Truck.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Split lines at point on line.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/angular.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/mapApp.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/run_bot.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/template.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/bot.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/GeoSpatial_CA/script/Creates Nodes and Edges.txt",
+		"/Users/Mike/Desktop/test.pyt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/angular-sanitize.min.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/google.js",
+		"/Users/Mike/Documents/Data/Transportation Infrastructure/California Rail_2013/Rail Node and Edges/Create Nodes and Edges Rail.txt",
+		"/Users/Mike/Desktop/streets/shortest_path.py",
+		"/Users/Mike/Desktop/streets/geotools.py",
+		"/Users/Mike/Desktop/streets/shortest_path",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/GEM/fuel_model.py",
+		"/Users/Mike/Explained_Visually/WaterFacts/popover-html-unsafe-popup.html",
+		"/Users/Mike/Explained_Visually/WaterFacts/setosa.css",
+		"/Users/Mike/Desktop/flare.json",
+		"/Users/Mike/Explained_Visually/WaterFacts/processing/watter_bubble.html",
+		"/Users/Mike/Explained_Visually/WaterFacts/processing/ca_per_capita_consumption.csv",
+		"/Users/Mike/Explained_Visually/WaterFacts/map.js",
+		"/Users/Mike/lecturejs/lecture.css",
+		"/Users/Mike/Explained_Visually/WaterFacts/index.html",
+		"/Users/Mike/Downloads/gem-v1.0-matlab/drive_cycles/tocsv.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/fuel_model.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/motion.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/screen_VIUS.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/parallel_coordintates.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/California Well-to-wheel/Model/PEMS/screenPEMS.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/GHG_footprint_sensitivity.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Paper/Figures/SFMTA Bus ridership/ridership_range.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/commodity_bar.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Paper/Figures/SFMTA Bus ridership/SFMTAbusridership.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/California Well-to-wheel/Model/PEMS/admin/view_district_level_stats.html",
+		"/Users/Mike/Desktop/viusheaders.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/clean_FleetDNA.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/data/ef_commodity_demand_c8.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/payloadorBSFC_c8.csv",
+		"/Users/Mike/Desktop/precipitation_Tap/legend.js",
+		"/Users/Mike/Desktop/precipitation_Tap/index.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/Payload_or_BSFC.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/js/untitled",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/speed_distribution_alt_2.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/js/legend.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/sensitivity_c6_2010.csv",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Work Product/Figures/Graphs/VIUS/stylesheets/em_payload_commodity.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/California Well-to-wheel/Model/PEMS/post_analysis.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/speed_distribution_alt.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/sensitivity_c8_2010.json",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/sensitivity_c8_2010.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Input_data/Route_R.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/visualize_duty_cycle.py",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/engine_map_350.m",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Input_data/driveschedule.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Input_data/driveschedulesecond.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/SummaryTable1_2010.csv",
+		"/Users/Mike/Desktop/untitled.tsv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/drivingschedule_km_302_c8.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/California Well-to-wheel/Model/PEMS/scripts/EMFAC_GREET.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/ScenarioDatabase.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/screen_duty.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/admin/speed_distribution.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/data_for_fleet_dna_delivery_vans.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/admin/speed_distribution_alt.html",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/Fuel Rate/GEM_PERE.py",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/engine_map_270.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/engine_map_200.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/engine_map_455.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/transmission_manual_param.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/vehicle_param.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/engine_param.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/electric_param.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/driver_param.m",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/ambient_param.m",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/admin/screen_duty_template.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/GHG_duty_cycle_one_percent_grade.csv",
+		"/Users/Mike/mtap1-udacity/views/circle_route.html",
+		"/Users/Mike/mtap1-udacity/main.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/UNEP/UNEP_onroad.py",
+		"/Users/Mike/Desktop/trash/file.csv",
+		"/Users/Mike/Documents/CleanShipping/main.py",
+		"/Users/Mike/mtap1-udacity/Login_Example/main.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"code",
+			"sec",
+			"</li>",
+			"uplo",
+			"faf35_data",
+			"faf",
+			"double precision",
+			"update",
+			"'",
+			"UPDATE us_rail_all_to_all",
+			"us_rail_all_to_all.",
+			"us_rail_all_to_all ",
+			"ghg_nealer",
+			"310.0",
+			".tail(310)",
+			"copy",
+			"double precision",
+			"ADD",
+			"conso",
+			"radius",
+			"bridge",
+			" double precision",
+			"ADD",
+			"character varying,",
+			"float",
+			"DECIMAL",
+			"double precision",
+			"	",
+			"'",
+			"sctg=",
+			";",
+			"naics='",
+			"double precision",
+			"\"",
+			" ",
+			"NOTICE:  ",
+			"fs_rail_us",
+			"fs_rail",
+			"pop",
+			"small",
+			"shape_len",
+			"pgr",
+			"km",
+			",\n  ",
+			" numeric(7,0)",
+			" numeric(6,2)",
+			" numeric(2,0)",
+			" character varying(2)",
+			" character varying(6)",
+			" character varying(13)",
+			" character varying(1)",
+			" character varying(8)",
+			"union",
+			"rail_gid",
+			"terminal",
+			",\n  ",
+			" varying(1)",
+			"character",
+			"split_line_multipoint",
+			".the_geom",
+			".geom",
+			".gid",
+			"new_stops",
+			"pt_split",
+			"shapelytools.",
+			"shapelytools",
+			"[",
+			"{",
+			"latLng",
+			"var",
+			"rail",
+			"default_circle",
+			"templ",
+			"{{",
+			"console",
+			"dispatch",
+			"_dispatch",
+			"poly",
+			"direction",
+			"markers",
+			"marker",
+			"ctrl",
+			"mousover",
+			"<div class='centered'>",
+			"<div class=\"well\">",
+			"jpg\" ></p>",
+			"questionbox",
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/gh-pages/PNGs/Slide",
+			"gh-page",
+			"PNGs/slide",
+			"height:500px; margin-bottom:",
+			"png\" style=\"height:500px; margin-bottom:",
+			".png\" style=\"height:500px; margin-bottom: -50px;\">",
+			"PNGs/slide",
+			"http://www.epa.gov/sustainability/analytics/life-cycle.htm",
+			"attr",
+			"line-height",
+			"ev",
+			"line",
+			"blockquote",
+			"LPapp",
+			"numer",
+			"+d.__weight_size - 2",
+			".attr(\"height\", y.rangeBand()/3);",
+			"y(d.__name) + (+d.__weight_size - 2)*y.rangeBand()/3",
+			".attr(\"y\", function(d) { return y(d.__name); })",
+			"d.__name+d.__weight_size",
+			"title",
+			"on_peak",
+			" \\n",
+			"\\n",
+			"\\\\n",
+			"\\n",
+			". ",
+			"apply",
+			"sort",
+			"	",
+			"Data",
+			"Dataf",
+			"color.domain()",
+			"text",
+			" load",
+			"avgc8",
+			"d[4]",
+			"print",
+			".attr(\"x\", 5)\n	    	.attr(\"y\", -15)",
+			"top: 30",
+			".style(\"font-size\", 20).style(\"font-weight\", \"bold\")"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"</li><br>",
+			"",
+			"UPDATE us_rail_all_to_all_2030",
+			"us_rail_all_to_all_2030.",
+			"us_rail_all_to_all_2030 ",
+			"ghg_2030",
+			"620.0",
+			".tail(620)",
+			"",
+			"DROP",
+			"",
+			"DROP",
+			"",
+			"numeric(18,10)",
+			"real",
+			"DECIMAL",
+			" , ",
+			" ,",
+			"",
+			"character varying(20)",
+			"character varying(10)",
+			"float",
+			"numeric(10,10)",
+			"numeric(10,3)",
+			"",
+			",",
+			"",
+			",",
+			"",
+			",",
+			"",
+			".wkb_geometry",
+			".ogc_fid",
+			"hwy2rail",
+			"rail",
+			"",
+			"truck",
+			"<div class='centered well'>",
+			"<div class=\"questionbox\">",
+			"png\" ></p>",
+			"well",
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide",
+			"gh-pages",
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/gh-page/PNGs/Slide",
+			"height:480px; margin-bottom:",
+			"jpg\" style=\"height:500px; margin-bottom:",
+			".jpg\" style=\"height:500px; margin-bottom: -50px;\">",
+			"img/slide",
+			"",
+			"4 - (+d.__weight_size)",
+			"4 - (+d.__weight_size - 2)",
+			".attr(\"height\", y.rangeBand()/3-1);",
+			"y(d.__name) + (+d.__weight_size - 2)*y.rangeBand()/3 - 1",
+			".attr(\"y\", function(d) { return y(d.__name) + (+d.__weight_size -2 )*y.rangeBand()/3); })",
+			".attr(\"y\", function(d) { return y(d.__name)+ (+d._weight_size-2)*y.rangeBand()/3); })",
+			"d.__name",
+			"\",\"",
+			"\",",
+			"\":\"",
+			",",
+			"color.quantiles()",
+			"d[0]",
+			".attr(\"x\", -55)\n	    	.attr(\"y\", -15)",
+			".attr(\"x\", -35)\n	    	.attr(\"y\", -15)",
+			".attr(\"x\", -15)\n	    	.attr(\"y\", -15)",
+			"top: 35",
+			".style(\"font-size\", 20)",
+			".style(\"font-size\", 20).style(\"font-weight\", \"bold\")",
+			" (1,000 kg)",
+			"(1,000 kg)",
+			"1000 kg",
+			".style(\"font-size\", 18).style(\"font-weight\", \"bold\")",
+			".style(\"font-size\", 16).style(\"font-weight\", \"bold\")",
+			".style(\"font-size\", 20).style(\"font-weight\", \"bold\")",
+			"elif(p<12):",
+			"elif(p<10):",
+			"if(p<9):",
+			".style(\"opacity\",0.55)",
+			".style(\"opacity\",0.4)",
+			".text(function(d){ return d[4]})\n				    .style(\"font-size\", 14).style(\"opacity\",0.7)",
+			"//.style(\"stroke\", function(){ if (e > 80){ return \"none\"}else{return  \"#000\"}})",
+			"a.payload, a.totE, a.x",
+			"a.totE",
+			",",
+			"",
+			"mapGHGperkm",
+			"grade=g, bsfc=200",
+			"[round(d[",
+			"[np.sum(np.array(x",
+			"good",
+			"km",
+			"d[\"%(v)s\"]",
+			"d.speed",
+			"d.c8",
+			"d.second",
+			"convertEnd",
+			"translateEnd",
+			"plant_list",
+			"fileout",
+			",",
+			"th PM filter', 9.0] ,",
+			"ro I+II', 40],",
+			" V', 40],",
+			"[ 'Motorcycles 4-stroke', 3]",
+			"\"MC\": [",
+			"'Pass.car diesel with PM filter', 9.0] ",
+			"\"PC\": [",
+			"II', 40]",
+			"\"BUS\": [",
+			"'Bus Euro I+II', 40]",
+			"'Bus Euro I+II', 40",
+			"\"BUS\": [",
+			"'Heavy trucks Euro V', 40]",
+			"\"HDV\": [",
+			"",
+			"country",
+			"countries",
+			"FE",
+			"T7 CAIRP",
+			"DSL",
+			"T6 CAIRP small",
+			"UBUS",
+			"truck",
+			"T7 Single",
+			"model",
+			"1.60934, 0]",
+			"[float(data",
+			","
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/Mike/d3_live_code_1"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/Mike/d3_live_code_1/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25533,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16980,
+								16980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6929.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Mike/d3_live_code_1/css/setosa.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6133,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Mike/d3_live_code_1/css/codemirror.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								182,
+								6581
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5283.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 347.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"css/codemirror.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 353.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

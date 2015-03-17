@@ -1,0 +1,1078 @@
+<html>
+  <head>
+    <title>Clean Web: D3.js</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+  
+    <script scr="http://mtaptich.github.io/d3_live_code_1/scripts/htmlmixed.js"></script>
+    <script src="http://mtaptich.github.io/d3_live_code_1/scripts/code_mirror.js"></script>
+    <script src="http://mtaptich.github.io/d3_live_code_1/scripts/color.js"></script>
+    <script src="http://mtaptich.github.io/d3_live_code_1/scripts/css.js"></script>
+    <script src="http://mtaptich.github.io/d3_live_code_1/scripts/xml.js"></script>
+    <link href="http://mtaptich.github.io/d3_live_code_1/css/setosa.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://mtaptich.github.io/d3_live_code_1/css/codemirror.css">
+    
+    <style>
+    ul{font-size: 18px;}
+
+    table.center {
+        margin-left:auto; 
+        margin-right:auto;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section class="title">
+      <div class="title-region">
+        <h1 class="title">Live Coding D3.js (Pt. 2)</h1>
+        <h3 class="by-line">
+          <ul class="list-inline">
+            <li><a href="mailto:m.taptich@berkeley.edu"><i class="fa fa-envelope-o fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/MikeTaptich"><i class="fa fa-twitter fa-2x"></a></i></li>
+            <li><a href="http://www.linkedin.com/pub/michael-taptich/21/263/b28/"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+            <li><a href="https://github.com/mtaptich"><i class="fa fa-github fa-2x"></i></a></li>
+          </ul>
+        </h3>
+
+      </div>
+    </section>
+    <section>
+        <h2> OMG Maps!</h2>
+        <p>With a little bit of practice, map making in d3.js can be as easy and intuitive as other GIS platforms. Maps serve many purposes in both research and outreach. They provide specific information about <a href="http://glimmer.rstudio.com/ramnathv/NYCBikeShare/" >particular locations</a>, can be used to showcase <a href="http://snf-datasci-2013.herokuapp.com/#observe-gather" target="_blank">
+        spatial patterns and relationships</a>, and give <a href="http://www.nytimes.com/interactive/2012/08/24/us/drought-crops.html?_r=0" target="_blank">
+        context to the data presented</a>. There are a <a href="http://bost.ocks.org/mike/map/" target="_blank">
+        few</a>  <a href="http://geoexamples.blogspot.com/2013/02/mapping-with-d3js-canvas-or-svg.html" target="_blank">
+        approaches</a> to generate <a href="http://bl.ocks.org/mbostock/4342045" target="_blank">
+        map</a>(<a href="http://bl.ocks.org/mbostock/4060606" target="_blank">s</a>) in d3.js, but we walk through some simple tips for beginners.</p> 
+
+        <p> Before we get started, let's return back to our <code>svg</code> example from <a href="http://mtaptich.github.io/d3_live_code_1/" target="_blank">Part 1</a> and explore an addition functionality, <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform" target="_blank">transform</a>. Transforming allows you to redefine the coordinate system of the SVG elements. This is particularly useful in interactive mapping.</p>
+
+        <div class="col-xs-12 well">
+            <div class="row">
+                <div class="col-xs-3"  style="background-color: none;">
+                    <iframe id="static" scrolling ="no" frameborder="0" height="200px" width="100%"></iframe> 
+                </div>
+                <div class="col-xs-9" style="background-color: #fff;">
+                <textarea id="3lc_static" name="3lc_static" >
+<html>
+  <!-- load libraries here -->
+  <script src="http://d3js.org/d3.v3.js"></script>
+
+  <body>
+    <div id="main">
+      <!-- Edit the transform attributes below. -->
+      <svg width="200" height="180" style="border: 1px solid black;">
+        <circle cx="40" cy="60" r="10" 
+            transform="translate(0,0)scale(1)"></circle>
+      </svg>
+    </div>
+  </body>
+</html>
+                </textarea>
+                <script>
+                  var delay1;
+                  // Initialize CodeMirror editor with a nice html5 canvas demo.
+                  var editor1 = CodeMirror.fromTextArea(document.getElementById('3lc_static'), {
+                    lineNumbers: true,
+                    mode: 'text/html'
+                  });
+                  editor1.setSize(700,230)
+                  editor1.on("change", function() {
+                    clearTimeout(delay1);
+                    delay1 = setTimeout(updatePreview1, 300);
+                  });
+                  
+                  function updatePreview1() {
+                    var previewFrame1 = document.getElementById('static');
+                    var preview1 =  previewFrame1.contentDocument ||  previewFrame1.contentWindow.document;
+                    preview1.open();
+                    preview1.write(editor1.getValue());
+                    preview1.close();
+                  }
+                  setTimeout(updatePreview1, 300);
+                </script> 
+                </div>
+            </div>
+        </div>
+        <p> By altering the transform attribute of the <code>svg</code>, D3 can allow users to zoom and drag elements of your data visualizations. 
+        <div class="col-xs-12 well">
+            <div class="row">
+                <div class="col-xs-3"  style="background-color: none;">
+                    <iframe id="static_alt" scrolling ="no" frameborder="0" height="200px" width="100%"></iframe> 
+                    <p style="padding: 10px">Click + drag the circle. Scroll to zoom.</p>
+                </div>
+                <div class="col-xs-9" style="background-color: #fff;">
+                <textarea id="lc_alt" name="lc_alt" >
+<html>
+  <!-- load libraries here -->
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <body>
+    <div id="main"></div>
+  </body>
+  <script type="text/javascript">
+    var svg = d3.select("#main").append("svg")
+        .attr("width", 200)
+        .attr("height", 180)
+        .style("border", "1px solid black")
+      .append("g");
+    
+    svg.append("circle")
+      .attr("cx", 40)
+      .attr("cy", 60)
+      .attr("r", 10);
+
+    var zoom = d3.behavior.zoom()
+        .on("zoom",function() {
+            // Using d3 mouse events, dynamically update translation and scale.
+            svg.selectAll("circle").attr("transform","translate("+ 
+                d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+      });
+      
+    svg.call(zoom); 
+  </script>
+</html>
+                </textarea>
+                <script>
+                  var delay2;
+                  // Initialize CodeMirror editor with a nice html5 canvas demo.
+                  var editor2 = CodeMirror.fromTextArea(document.getElementById('lc_alt'), {
+                    lineNumbers: true,
+                    mode: 'text/html'
+                  });
+                  editor2.setSize(700,450)
+                  editor2.on("change", function() {
+                    clearTimeout(delay2);
+                    delay2 = setTimeout(updatePreview2, 300);
+                  });
+                  
+                  function updatePreview2() {
+                    var previewFrame2 = document.getElementById('static_alt');
+                    var preview2 =  previewFrame2.contentDocument ||  previewFrame2.contentWindow.document;
+                    preview2.open();
+                    preview2.write(editor2.getValue());
+                    preview2.close();
+                  }
+                  setTimeout(updatePreview2, 300);
+                </script> 
+                </div>
+            </div>
+        </div>
+        <p> Now that we have a better understanding of the transform attributes of <code>svg</code>, we can begin to build a map using D3.</p>
+
+        <h2>Getting Map Data</h2>
+        <p>There are a large collection of geospatial files (e.g., shapefiles, kml, etc.) online. Here is a quick list of places I like to go for these files.</p>
+        <ul>
+          <li><a href="http://www.naturalearthdata.com/downloads/" target="_black">Natural Earth</a>
+          </li>
+          <li><a href="http://www.nationalatlas.gov/maplayers.html" target="_black">US Atlas</a>
+          </li>
+          <li><a href="https://data.sfgov.org/" target="_black">SFgov.org</a>
+          </li>
+          <li><a href="http://www.gis.fhwa.dot.gov/gisData.asp" target="_black">Federal Highway Administration</a>
+          </li>
+          <li><a href="https://github.com/mbostock/us-atlas" target="_black">US Atlas in d3.js</a>
+          </li>
+          <li><a href="http://www.census.gov/geo/maps-data/" target="_black">Census Bureau</a>
+          </li>
+          <li><a href="http://www.nws.noaa.gov/gis/shapepage.htm" target="_black">National Oceanic and Atmospheric Administration (NOAA)</a>
+          </li>
+          <li><a href="https://www.sciencebase.gov/catalog/items?q=&filter0=browseCategory%3DData&facetTermLevelLimit=false" target="_black">ScienceBase Catalog</a>
+          </li>
+        </ul>
+        
+
+        <p>Geographic data files, such as <a href="http://en.wikipedia.org/wiki/Shapefile" target="_blank">shapefiles</a>, are too large to display and manipulate in internet browsers. For this reason, a large portion of your time creating a map will be retrieving and processing data. The d3.js library supports
+          <a href="https://github.com/mbostock/d3/wiki/Requests#convenience-methods" target="_blank">multiple data formats</a>, but the two most commonly used are CSV and JSON.</p>
+        <ul class="center-block">
+          <li><a href="https://github.com/mbostock/d3/wiki/CSV" target="_black">CSV</a>
+          </li>
+          <li><a href="https://www.dashingd3js.com/d3-examples/1-d3-and-javascript-working-with-json" target="_black">JSON</a>
+          </li>
+        </ul>
+        <p>The goal is then to manage and process your geographic data into these useful filetypes. Luckily, there are many helpful data processing tools available on the web.
+          <a href="http://bost.ocks.org/mike/" target="_blank">Mike Bostock</a> presents a great introduction to <a href="http://en.wikipedia.org/wiki/Shapefile" target="_blank">creating maps</a> using the <a href="http://www.gdal.org/" target="_blank">Geospatial Data Abstraction Library</a> (which includes <a href="http://www.gdal.org/ogr/" target="_blank">OGR Simple Features Library</a> and
+          <code><a href="http://www.gdal.org/ogr2ogr.html" target="_blank">ogr2ogr</a>
+          </code>). I highly encourage you to read more about <a href="http://geojson.org" target="_blank">GeoJSON</a> and Mike's <a href="https://github.com/mbostock/topojson" target="_blank">TopoJSON</a> data formats. For now, just know that these are the two measures needed to convert shapefiles into smaller, more manageable filetypes.</p>
+
+        <p>I like to manipulate my files locally - but you do not have to do this! Instead, you can use online data processing services, like  <a href="http://www.mapshaper.org/" target="_blank">mapshaper.org</a>, to reduce the file sizes of your spatial data.</p>
+
+        <h2> Simple Example </h2>
+
+        <p>Let's try this together. Download and unpack <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/zip/state_pol.zip">this</a> map of the United States from the <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/index.html" target="_blank">National Transportation Atlas Database</a>. Then upload the .shp file to the mapshaper website below and simply it to 10% using the slider bar. <a href="http://bost.ocks.org/mike/simplify/" target="_blank">Simpifying the geometry of your data</a> can improve download time and rendering speeds. Once simplified, you can export your shapefile (13.7 MB) to topojson (428 KB).</p>
+
+        <div class="col-xs-12 well">
+            <div class="row">
+                <iframe src="http://www.mapshaper.org/" scrolling ="no" frameborder="0" height="600px" width="100%"></iframe> 
+            </div>
+        </div>
+
+        <p>We will use the topojson files and a map projection to <a href="http://bost.ocks.org/mike/example/" target="_blank">portray the surface of the earth</a> onto the x-y pixel coordinate system of our <code>svg</code>. Each dataset will have a unique geospatial scope, so selecting an appropriate projection to use is the first step. Here is an excellent list of the different projections provided in a <a href="https://github.com/d3/d3-geo-projection/tree/d3298df7fa2713b19929502aea7cc24efdf23ece" target="_blank">plugin</a> by <a href="https://www.jasondavies.com/" target="_blank">Jason Davies</a>, but many more are available.  </p>
+
+        <div class="col-xs-12 well" style="max-height: 700px; overflow:auto;">
+            <div class="row">
+                <table class="center">
+                  <tbody><tr height="150" valign="top">
+                    <td>airy
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5620807" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5620807/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>aitoff
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3682698" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3682698/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">albers *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734308" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734308/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">albersUsa *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4090848" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4090848/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>armadillo
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4463127" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4463127/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>august
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3797581" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3797581/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">azimuthalEqualArea *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3757101" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3757101/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">azimuthalEquidistant *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3757110" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3757110/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>baker
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4476279" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4476279/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>berghaus
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4463049" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4463049/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>boggs
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4481220" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4481220/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>bonne
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734313" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734313/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>bromley
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4487695" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4487695/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>chamberlin
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5625053" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5625053/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>collignon
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734316" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734316/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">conicEqualArea *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734308" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734308/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td class="gi">conicConformal *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734321" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734321/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">conicEquidistant *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734317" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734317/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>craig
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4459466" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4459466/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>craster
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4465118" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4465118/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>cylindricalEqualArea
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3712408" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3712408/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>cylindricalStereographic
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5234763" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5234763/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>eckert1
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734322" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734322/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>eckert2
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734324" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734324/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>eckert3
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734325" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734325/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>eckert4
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734327" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734327/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>eckert5
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734328" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734328/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>eckert6
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734329" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734329/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>eisenlohr
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3797585" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3797585/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">equirectangular *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3757119" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3757119/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>fahey
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4731228" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4731228/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>gilbert
+                      <br>
+                      <a href="http://www.jasondavies.com/maps/gilbert/" target="_blank">
+                        <img src="http://www.jasondavies.com/maps/gilbert/thumb.d3.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>ginzburg4
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5288565" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5288565/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>ginzburg5
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5288571" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5288571/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>ginzburg6
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5288577" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5288577/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>ginzburg8
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5288583" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5288583/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>ginzburg9
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5288590" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5288590/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">gnomonic *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3757349" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3757349/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>gringorten
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4362031" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4362031/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>guyou
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3763867" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3763867/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>hammer
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3712397" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3712397/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>hammerRetroazimuthal
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4459130" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4459130/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>healpix
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4463237" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4463237/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>hill
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4479513" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4479513/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>homolosine
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734330" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734330/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>kavrayskiy7
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3710082" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3710082/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>lagrange
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3797591" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3797591/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>larrivee
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3719042" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3719042/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>laskowski
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4489342" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4489342/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>littrow
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4459071" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4459071/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>loximuthal
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3867220" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3867220/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">mercator *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3757132" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3757132/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>miller
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734333" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734333/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>modifiedStereographic
+                      <br>
+                      <a href="http://www.jasondavies.com/maps/modified-stereographic/" target="_blank">
+                        <img src="http://www.jasondavies.com/maps/modified-stereographic/gs50/thumb.d3.png" width="202">
+                      </a>
+                    </td>
+                    <td>mollweide
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734336" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734336/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>mtFlatPolarParabolic
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4465130" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4465130/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>mtFlatPolarQuartic
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4465137" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4465137/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>mtFlatPolarSinusoidal
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4465140" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4465140/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>naturalEarth
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4479477" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4479477/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>nellHammer
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734342" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734342/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td class="gi">orthographic *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3757125" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3757125/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>peirceQuincuncial
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4310087" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4310087/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>polyconic
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3734343" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3734343/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>polyhedron.butterfly
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4458680" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4458680/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>polyhedron.waterman
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4458497" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4458497/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>rectangularPolyconic
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5230202" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5230202/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>robinson
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3710566" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3710566/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>satellite
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3790444" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3790444/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>sinuMollweide
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4319903" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4319903/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>sinusoidal
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3712399" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3712399/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">stereographic *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3757137" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3757137/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>times
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5230564" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5230564/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>twoPointAzimuthal
+                      <br>
+                      <a href="http://www.jasondavies.com/maps/two-point-azimuthal/" target="_blank">
+                        <img src="http://www.jasondavies.com/maps/two-point-azimuthal/thumb.d3.png" width="202">
+                      </a>
+                    </td>
+                    <td>twoPointEquidistant
+                      <br>
+                      <a href="http://www.jasondavies.com/maps/two-point-equidistant/" target="_blank">
+                        <img src="http://www.jasondavies.com/maps/two-point-equidistant/thumb.d3.png" width="202">
+                      </a>
+                    </td>
+                    <td class="gi">transverseMercator *
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5126418" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5126418/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>vanDerGrinten
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3796831" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3796831/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>vanDerGrinten2
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5230571" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5230571/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>vanDerGrinten3
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/5230580" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/5230580/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>vanDerGrinten4
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4489365" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4489365/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>wagner4
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4487674" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4487674/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr height="150" valign="top">
+                    <td>wagner6
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3710148" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3710148/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>wagner7
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4465109" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4465109/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>wiechel
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/4463155" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/4463155/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                    <td>winkel3
+                      <br>
+                      <a href="http://bl.ocks.org/mbostock/3682676" target="_blank">
+                        <img src="http://bl.ocks.org/mbostock/raw/3682676/thumbnail.png" width="202">
+                      </a>
+                    </td>
+                  </tr>
+                </tbody></table>
+            </div>
+        </div>
+
+        <p> For our example, let's use Lambert Conformal Conic projection, centering the projection to show only the lower-48 states. 
+
+        <div class="col-xs-12 well">
+            <div class="row">
+                <div class="col-xs-12"  style="background-color: none;">
+                    <iframe id="map" scrolling ="no" frameborder="0" height="500px" width="100%"></iframe> 
+                   
+                </div>
+                <div class="col-xs-12" style="background-color: #fff;">
+                <textarea id="map_us" name="map_us" >
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Upload our topojson file, which is stored in the same folder as our index.html file
+d3.json("state_pol.json", function(error, us) { // passes an error and object variable
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("class", function(d) {return d.id})
+      .attr("d", path)
+});
+</script>
+                </textarea>
+                <script>
+                  var delay3;
+                  // Initialize CodeMirror editor with a nice html5 canvas demo.
+                  var editor3 = CodeMirror.fromTextArea(document.getElementById('map_us'), {
+                    lineNumbers: true,
+                    mode: 'text/html'
+                  });
+        
+                  editor3.on("change", function() {
+                    clearTimeout(delay3);
+                    delay3 = setTimeout(updatePreview3, 300);
+                  });
+                  
+                  function updatePreview3() {
+                    var previewFrame3 = document.getElementById('map');
+                    var preview3 =  previewFrame3.contentDocument ||  previewFrame3.contentWindow.document;
+                    preview3.open();
+                    preview3.write(editor3.getValue());
+                    preview3.close();
+                  }
+                  setTimeout(updatePreview3, 300);
+                </script> 
+                </div>
+            </div>
+        </div>
+        <p> Now, let's add some data to this map! Download <a href="http://mtaptich.github.io/d3_live_code_2/ports_major.csv">this</a> CSV file listing the location of the top 150 ports in the United States, which was taken from the <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/index.html" target="_blank">National Transportation Atlas Database</a>. I converted the original file from .shp to .csv using <code>ogr2ogr</code> because this is a more familiar data format among beginners. 
+
+        <div class="col-xs-12 well">
+            <div class="row">
+                <div class="col-xs-12"  style="background-color: none;">
+                    <iframe id="map_data" scrolling ="no" frameborder="0" height="500px" width="100%"></iframe> 
+                   
+                </div>
+                <div class="col-xs-12" style="background-color: #fff;">
+                <textarea id="map_us_data" name="map_us_data" >
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+.ports{
+    fill:red;
+    fill-opacity: 0.3;
+    stroke-width: 1px;
+    stroke: red;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Create a scale that maps total tonnage to a radius size between 2 and 30 pixels
+var port_size = d3.scale.linear().domain([0, 252070000]).range([2,30]);
+
+// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+function ready(error, us, ports){ // passes an error and object variables for the states and ports
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("class", function(d) {return d.id})
+      .attr("d", path)
+
+    // map the GPS coordinates to 
+  svg.append("g")
+    .selectAll("circle")
+   .data(ports).enter()
+    .append("circle")
+    .attr("class", "ports")
+    .attr("cx", function(d) {
+           return projection([d["long"], d["lat"] ])[0]; // return x location on svg
+           })
+    .attr("cy", function(d) {
+           return projection([d["long"],d["lat"] ])[1]; // return 7 location on svg
+           })
+    .attr("r", function(d){ return port_size(+d.TOTAL)});    
+};
+
+</script>
+                </textarea>
+                <script>
+                  var delay4;
+                  // Initialize CodeMirror editor with a nice html5 canvas demo.
+                  var editor4 = CodeMirror.fromTextArea(document.getElementById('map_us_data'), {
+                    lineNumbers: true,
+                    mode: 'text/html'
+                  });
+        
+                  editor4.on("change", function() {
+                    clearTimeout(delay4);
+                    delay4 = setTimeout(updatePreview4, 300);
+                  });
+                  
+                  function updatePreview4() {
+                    var previewFrame4 = document.getElementById('map_data');
+                    var preview4 =  previewFrame4.contentDocument ||  previewFrame4.contentWindow.document;
+                    preview4.open();
+                    preview4.write(editor4.getValue());
+                    preview4.close();
+                  }
+                  setTimeout(updatePreview4, 300);
+                </script> 
+                </div>
+            </div>
+        </div>
+
+        <p> Finally, add the zoom function used in the first examples to allow users to inspect portions of our map with greater resolution.</p>
+
+        <div class="col-xs-12 well">
+            <div class="row">
+                <div class="col-xs-12"  style="background-color: none;">
+                    <iframe id="map_data_2" scrolling ="no" frameborder="0" height="500px" width="100%"></iframe> 
+                   
+                </div>
+                <div class="col-xs-12" style="background-color: #fff;">
+                <textarea id="map_us_data_2" name="map_us_data_2" >
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+.ports{
+    fill:red;
+    fill-opacity: 0.3;
+    stroke-width: 1px;
+    stroke: red;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Create a scale that maps total tonnage to a radius size between 2 and 30 pixels
+var port_size = d3.scale.linear().domain([0, 252070000]).range([2,30]);
+
+// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+function ready(error, us, ports){ // passes an error and object variables for the states and ports
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("class", function(d) {return d.id})
+      .attr("d", path)
+
+    // map the GPS coordinates to 
+  svg.append("g")
+    .selectAll("circle")
+   .data(ports).enter()
+    .append("circle")
+    .attr("class", "ports")
+    .attr("cx", function(d) {
+           return projection([d["long"], d["lat"] ])[0]; // return x location on svg
+           })
+    .attr("cy", function(d) {
+           return projection([d["long"],d["lat"] ])[1]; // return 7 location on svg
+           })
+    .attr("r", function(d){ return port_size(+d.TOTAL)});    
+};
+
+var zoom = d3.behavior.zoom()
+  .on("zoom",function() {
+    // Using d3 mouse events, dynamically update translation and scale.
+    svg.selectAll("g").attr("transform","translate("+ 
+        d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+});
+
+svg.call(zoom); 
+
+</script>
+                </textarea>
+                <script>
+                  var delay5;
+                  // Initialize CodeMirror editor with a nice html5 canvas demo.
+                  var editor5 = CodeMirror.fromTextArea(document.getElementById('map_us_data_2'), {
+                    lineNumbers: true,
+                    mode: 'text/html'
+                  });
+        
+                  editor5.on("change", function() {
+                    clearTimeout(delay5);
+                    delay5 = setTimeout(updatePreview5, 300);
+                  });
+                  
+                  function updatePreview5() {
+                    var previewFrame5 = document.getElementById('map_data_2');
+                    var preview5 =  previewFrame5.contentDocument ||  previewFrame5.contentWindow.document;
+                    preview5.open();
+                    preview5.write(editor5.getValue());
+                    preview5.close();
+                  }
+                  setTimeout(updatePreview5, 300);
+                </script> 
+                </div>
+            </div>
+        </div>
+
+
+  </section>
+  <div class="text-center">
+      <hr>
+      <p>Copyright &copy; Mike Taptich 2015... JK. Take what you want from here.</p>
+    </div>
+</body>
+</html>
