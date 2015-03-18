@@ -1,25 +1,27 @@
-<html>
+<html ng-app="lessonapp">
   <head>
-    <title>Clean Web: D3.js</title>
+    <title>An introduction to d3.js</title>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-  
-    <script scr="scripts/htmlmixed.js"></script>
-    <script src="scripts/code_mirror.js"></script>
-    <script src="scripts/color.js"></script>
-    <script src="scripts/css.js"></script>
-    <script src="scripts/xml.js"></script>
-    <link href="css/setosa.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/codemirror.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script scr="../scripts/htmlmixed.js"></script>
+    <script src="../scripts/code_mirror.js"></script>
+    <script src="../scripts/color.js"></script>
+    <script src="../scripts/css.js"></script>
+    <script src="../scripts/xml.js"></script>
+    <script src="../scripts/lesson.js"></script>
+ 
+    <link href="../css/setosa.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/codemirror.css">
     
     <style>
 
     </style>
   </head>
-  <body>
+  <body ng-controller="main">
     <section class="title">
       <div class="title-region">
         <h1 class="title">Live Coding D3.js</h1>
@@ -38,14 +40,7 @@
       <h2>Three Little Circles</h2>
       <p>D3 is most useful when used to generate and manipulate visuals as <a href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics" target="_blank">SVGs</a> because SVGs can be transformed and scaled witout suffering from <a href="http://en.wikipedia.org/wiki/Pixelation" target="_blank">pixelation</a>. All major modern web browsers - including Mozilla Firefox, Internet Explorer, Google Chrome, Opera, and Safari - have at least some degree of SVG support and can render the markup directly.</p>
       <p> Before we get into examples in d3.js, let's briefly review SVGs in html.  This will give you a better idea of how d3.js utilizes <a href="http://en.wikipedia.org/wiki/JavaScript" traget="_blank">javascript</a> to animate data visualizations. Check out the code below; it shows a SVG circle in html.</p>
-      <div class="col-xs-12 well">
-        <div class="row">
-          <div class="col-xs-4"  style="background-color: none;">
-            <iframe id="static" scrolling ="no" frameborder="0" height="200px" width="100%"></iframe> 
-          </div>
-          <div class="col-xs-8" style="background-color: #fff;">
-            <textarea id="3lc_static" name="3lc_static">
-<html>
+      <live-code wincol="3"><textarea><html>
   <style>
   <!-- CSS goes here -->
     
@@ -71,29 +66,7 @@
     -->
     </div>
   </body>
-</html>
-            </textarea>
-            <script>
-              var delay1;
-              // Initialize CodeMirror editor with a nice html5 canvas demo.
-              var editor1 = CodeMirror.fromTextArea(document.getElementById('3lc_static'), {
-                lineNumbers: true,
-                mode: 'text/html'
-              });
-              editor1.on("change", function() {
-                clearTimeout(delay1);
-                delay1 = setTimeout(updatePreview1, 300);
-              });
-              
-              function updatePreview1() {
-                var previewFrame1 = document.getElementById('static');
-                var preview1 =  previewFrame1.contentDocument ||  previewFrame1.contentWindow.document;
-                preview1.open();
-                preview1.write(editor1.getValue());
-                preview1.close();
-              }
-              setTimeout(updatePreview1, 300);
-            </script> 
+</html></textarea></live-code>
           </div>
         </div>
       </div>
@@ -118,14 +91,7 @@
           </div>
       </div>
 
-      <div class="col-xs-12 well">
-        <div class="row">
-          <div class="col-xs-4"  style="background-color: none;">
-            <iframe id="littlecircles" scrolling ="no" frameborder="0" height="200px" width="100%"></iframe> 
-          </div>
-          <div class="col-xs-8" style="background-color: #fff;">
-            <textarea id="3lc" name="3lc">
-<html>
+      <live-code h="520" wincol="3"><textarea><html>
   <script src="http://d3js.org/d3.v3.js"></script>
   <body>
     <div id="main"></div>
@@ -159,31 +125,7 @@
       });
   </script>
   <!-- Right click a circle and choose 'Inspect Element' to see the rendered SVG -->
-</html>          </textarea>
-              <script>
-              var delay2;
-              // Initialize CodeMirror editor with a nice html5 canvas demo.
-              var editor2 = CodeMirror.fromTextArea(document.getElementById('3lc'), {
-                lineNumbers: true,
-                mode: 'text/html'
-              });
-              editor2.on("change", function() {
-                clearTimeout(delay2);
-                delay = setTimeout(updatePreview2, 300);
-              });
-              
-              function updatePreview2() {
-                var previewFrame2 = document.getElementById('littlecircles');
-                var preview2 =  previewFrame2.contentDocument ||  previewFrame2.contentWindow.document;
-                preview2.open();
-                preview2.write(editor2.getValue());
-                preview2.close();
-              }
-              setTimeout(updatePreview2, 300);
-            </script> 
-          </div>
-        </div>
-      </div>
+</html></textarea></live-code>
 
 
       <p>As you can see above, the <a href="https://github.com/mbostock/d3/wiki/Selections#wiki-append">append</a> method allows you to create a single element. This is can be  useful in small applications.  If we want to scale this process, we need to utilize D3's <em>data join</em> methods which creates and updates elements corresponding to your data.  </p>
@@ -196,14 +138,9 @@
       .attr(<span class="string">"r"</span>, <span class="number">10</span>);</code></pre>
       
       <br>
-       <div class="col-xs-12 well">
-        <div class="row">
-          <div class="col-xs-4"  style="background-color: none;">
-            <iframe id="littlecircles_select" scrolling ="no" frameborder="0" height="200px" width="100%"></iframe> 
-          </div>
-          <div class="col-xs-8" style="background-color: #fff;">
-            <textarea id="3lc_select" name="3lc_select">
-<html>
+
+
+      <live-code h="520" wincol="3"><textarea><html>
   <script src="http://d3js.org/d3.v3.js"></script>
   <body> <div id="main"></div></body>
   <script type="text/javascript">  // write your d3.js code here
@@ -237,31 +174,7 @@
       return d.size/2;
     }
   </script>
-</html>          </textarea>
-              <script>
-              var delay3;
-              // Initialize CodeMirror editor with a nice html5 canvas demo.
-              var editor3 = CodeMirror.fromTextArea(document.getElementById('3lc_select'), {
-                lineNumbers: true,
-                mode: 'text/html'
-              });
-              editor3.on("change", function() {
-                clearTimeout(delay3);
-                delay = setTimeout(updatePreview3, 300);
-              });
-              
-              function updatePreview3() {
-                var previewFrame3 = document.getElementById('littlecircles_select');
-                var preview3 =  previewFrame3.contentDocument ||  previewFrame3.contentWindow.document;
-                preview3.open();
-                preview3.write(editor3.getValue());
-                preview3.close();
-              }
-              setTimeout(updatePreview3, 300);
-            </script> 
-          </div>
-        </div>
-      </div>
+</html></textarea></live-code>
 
     <p>Mike Bostock has a great explanation of the data joing process on <a href="http://bost.ocks.org/mike/join/" target="_blank">one of his blog posts</a>.  Here is what he has to say in brief:
         <span style="margin-left: 10%; width: 80%;">

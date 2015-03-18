@@ -1,0 +1,1084 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cl",
+				"classification"
+			],
+			[
+				"pae",
+				"partitionbyscore"
+			],
+			[
+				"retr",
+				"return_type"
+			],
+			[
+				"sa",
+				"savings"
+			],
+			[
+				"est",
+				"est_food"
+			],
+			[
+				"del",
+				"delta_hrs"
+			],
+			[
+				"cs",
+				"CSVtoDB"
+			],
+			[
+				"for",
+				"forcezero"
+			],
+			[
+				"com",
+				"columns"
+			],
+			[
+				"b",
+				"boxplot"
+			],
+			[
+				"tex",
+				"text-anchor"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"wid",
+				"width-20"
+			],
+			[
+				"tr",
+				"translate	.attr('transform', 'translate(0,0)')"
+			],
+			[
+				"te",
+				"text-anchor"
+			],
+			[
+				"sta",
+				"stateid"
+			],
+			[
+				"rad",
+				"radar"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"line",
+				"linestring"
+			],
+			[
+				"fi",
+				"file_path"
+			],
+			[
+				"po",
+				"poly_list"
+			],
+			[
+				"ge",
+				"get_files_names_from_folder"
+			],
+			[
+				"de",
+				"decode_polyline"
+			],
+			[
+				"or",
+				"origin"
+			],
+			[
+				"we",
+				"webpath"
+			],
+			[
+				"ve",
+				"verbose_directive	AngularJS"
+			],
+			[
+				"mo",
+				"verbose_module	AngularJS"
+			],
+			[
+				"pol",
+				"polystring"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"pa",
+				"packageName"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"ta",
+				"target	Attr"
+			],
+			[
+				"t",
+				"target	Attr"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"mag",
+				"margin-bottom"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"get",
+				"getUnique"
+			],
+			[
+				"Da",
+				"DataFrame"
+			],
+			[
+				"wei",
+				"weight_size"
+			],
+			[
+				"veh",
+				"veh_list"
+			],
+			[
+				"ef",
+				"ef_list"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"gr",
+				"graph"
+			],
+			[
+				"co",
+				"commodity"
+			],
+			[
+				"data",
+				"dataNest"
+			],
+			[
+				"dat",
+				"dataNest"
+			],
+			[
+				"sced",
+				"schedule"
+			],
+			[
+				"col",
+				"columns"
+			],
+			[
+				"dri",
+				"drivescheduleid"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"dr",
+				"drivescheduleid"
+			],
+			[
+				"B",
+				"BSFC"
+			],
+			[
+				"sc",
+				"Schedule_ID"
+			],
+			[
+				"select",
+				"selectAll"
+			],
+			[
+				"stro",
+				"stroke-dasharray"
+			],
+			[
+				"p",
+				"p_tot"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"ghg",
+				"ghgsum"
+			],
+			[
+				"__",
+				"__ghg__"
+			],
+			[
+				"len",
+				"length-1"
+			],
+			[
+				"d",
+				"data0"
+			],
+			[
+				"tes",
+				"testAjax"
+			],
+			[
+				"styles",
+				"stylesheets"
+			],
+			[
+				"in",
+				"innerRadius"
+			],
+			[
+				"Inn",
+				"innerRadius"
+			],
+			[
+				"to",
+				"totalton"
+			],
+			[
+				"ns",
+				"nstart"
+			],
+			[
+				"di",
+				"distance"
+			],
+			[
+				"fill",
+				"fill-opacity"
+			],
+			[
+				"nst",
+				"nstart-1"
+			],
+			[
+				"da",
+				"data0"
+			],
+			[
+				"web",
+				"webapp2"
+			],
+			[
+				"render",
+				"render_template"
+			],
+			[
+				"write",
+				"writerow"
+			],
+			[
+				"Cs",
+				"CSVtoDB"
+			],
+			[
+				"EV",
+				"EV_Scenario"
+			],
+			[
+				"Ev",
+				"EVscenario"
+			],
+			[
+				"fu",
+				"fuel_eff_electric"
+			],
+			[
+				"Pe",
+				"PercentEV"
+			],
+			[
+				"coun",
+				"country"
+			],
+			[
+				"count",
+				"country"
+			],
+			[
+				"regio",
+				"regions"
+			],
+			[
+				"quer",
+				"query2db"
+			],
+			[
+				"s",
+				"sqlq"
+			],
+			[
+				"ex",
+				"exhaust"
+			],
+			[
+				"Pass",
+				"passenger"
+			],
+			[
+				"L",
+				"Lat"
+			],
+			[
+				"pl",
+				"plant_list"
+			],
+			[
+				"route",
+				"route_list"
+			],
+			[
+				"map",
+				"map_canvas"
+			],
+			[
+				"csv",
+				"csvContent"
+			],
+			[
+				"spee",
+				"speed_status"
+			],
+			[
+				"json",
+				"jsonlist"
+			],
+			[
+				"lin",
+				"linecolor"
+			],
+			[
+				"jso",
+				"jsonlist"
+			],
+			[
+				"lef",
+				"leftindex"
+			],
+			[
+				"le",
+				"leftindex"
+			],
+			[
+				"ld",
+				"leftindent"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"se",
+				"selectAll"
+			],
+			[
+				"v",
+				"visibility"
+			],
+			[
+				"CO",
+				"CO2"
+			],
+			[
+				"e",
+				"emfac"
+			],
+			[
+				"fuel",
+				"fuelrate"
+			],
+			[
+				"c",
+				"co"
+			],
+			[
+				"j",
+				"jsonOut"
+			],
+			[
+				"scr",
+				"screenOn"
+			],
+			[
+				"o",
+				"ogr2ogr_to_shp"
+			],
+			[
+				"Tr",
+				"Truck_set"
+			],
+			[
+				"change",
+				"changeSpeed"
+			],
+			[
+				"P",
+				"Pac"
+			],
+			[
+				"tra",
+				"trans_ef"
+			],
+			[
+				"df",
+				"df2"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/index.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Mike/d3-lessons"
+	],
+	"file_history":
+	[
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/commodity_disaggregation_regressions.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Paper/Figures/graphs/scripts/drayage_calc.py",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Freighshed Sanity Checks.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Find Shortest Path between nodes.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Freightsheds United States.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create national production estimates for counties.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Export freightshed data to json.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Calculate average drayage distances.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Find Geometry Azimuth in degrees for closest terminal.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Meat Case Study.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Paper/Figures/graphs/scripts/us_discrete_access.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Paper/Figures/graphs/scripts/us_food_paper_summary.py",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Paper Case Study.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Link networks based on terminals.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Meat Case Study with No Infrastructure Constraints.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Paper Case Study with No Infrastructure Constraints.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Aggregate FAF Data for regressions.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/CBP_FAF_disaggregaiton.py",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Freight flow disaggregation example.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Model freight flows between counties.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Match Counties to FAF ids.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/output_data/CBP_linear_approximation.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Paper/Figures/data/food_freightshed_80.csv",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Evaluate the benefits of mode switching.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Estimate time costs throught network.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Show Results of Freightshed Assessment.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Intermodal Network Based on NTA.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Split lines at point on line.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Add future scenario.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/plot_postgresql_results.py",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/plot_postgres_results.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data/radial.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/radial.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/state_thumb_rank.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data/radar.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/Figures/data/us-states.json",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/Collect FAF data for specific commodities.txt",
+		"/Users/Mike/Documents/QGIS/styles/colorbrewer.xml",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Loop through all OD pairs -- pgRouting.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create pgRouting network.txt",
+		"/Users/Mike/Desktop/test.csv",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Calculate the GHG savings between two isochone.txt",
+		"/Users/Mike/Desktop/test.py",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Match County Centroids to Network Nodes.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Freightsheds US.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Freightsheds/Create Freightsheds California.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds US.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds California.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds rail.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Calculate the GHG savings between two isochone.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Identify Potential Destinations in HWY and Rail network.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Reduce pGrouting network based on specific conditions.text",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Freightsheds  California.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create US Freightsheds.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create California Freightsheds.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Merge Networks into One Table.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_multimodal.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Add Emission factor to links (Simple).txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_california.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Isochrones in pGrouting.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create Isocrones using pGrouting.text",
+		"/Users/Mike/Documents/scripts/PostGIS/Split lines at point on line_hwy.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_rail.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Create pgRouting network_hwy.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Link networks based on terminals.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Snap points onto closest line.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/geotools.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/google_maps_decode.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/parse_polyline.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/shapelytools.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/pandashp.py",
+		"/Users/Mike/Documents/Data/Transportation Infrastructure/California Truck Network 2011/Nodes and Edges Truck/Create Nodes and Edges Truck.txt",
+		"/Users/Mike/Documents/scripts/PostGIS/Split lines at point on line.txt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/angular.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/mapApp.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/run_bot.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/template.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/bot.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/GeoSpatial_CA/script/Creates Nodes and Edges.txt",
+		"/Users/Mike/Desktop/test.pyt",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/angular-sanitize.min.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/w2wio/scripts/google.js",
+		"/Users/Mike/Documents/Data/Transportation Infrastructure/California Rail_2013/Rail Node and Edges/Create Nodes and Edges Rail.txt",
+		"/Users/Mike/Desktop/streets/shortest_path.py",
+		"/Users/Mike/Desktop/streets/geotools.py",
+		"/Users/Mike/Desktop/streets/shortest_path",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/GEM/fuel_model.py",
+		"/Users/Mike/Explained_Visually/WaterFacts/popover-html-unsafe-popup.html",
+		"/Users/Mike/Explained_Visually/WaterFacts/setosa.css",
+		"/Users/Mike/Desktop/flare.json",
+		"/Users/Mike/Explained_Visually/WaterFacts/processing/watter_bubble.html",
+		"/Users/Mike/Explained_Visually/WaterFacts/processing/ca_per_capita_consumption.csv",
+		"/Users/Mike/Explained_Visually/WaterFacts/map.js",
+		"/Users/Mike/lecturejs/lecture.css",
+		"/Users/Mike/Explained_Visually/WaterFacts/index.html",
+		"/Users/Mike/Downloads/gem-v1.0-matlab/drive_cycles/tocsv.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/fuel_model.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/motion.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/screen_VIUS.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/parallel_coordintates.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/California Well-to-wheel/Model/PEMS/screenPEMS.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/GHG_footprint_sensitivity.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Paper/Figures/SFMTA Bus ridership/ridership_range.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/commodity_bar.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Paper/Figures/SFMTA Bus ridership/SFMTAbusridership.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/California Well-to-wheel/Model/PEMS/admin/view_district_level_stats.html",
+		"/Users/Mike/Desktop/viusheaders.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/clean_FleetDNA.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/data/ef_commodity_demand_c8.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/payloadorBSFC_c8.csv",
+		"/Users/Mike/Desktop/precipitation_Tap/legend.js",
+		"/Users/Mike/Desktop/precipitation_Tap/index.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/Payload_or_BSFC.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/js/untitled",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/speed_distribution_alt_2.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/js/legend.js",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/sensitivity_c6_2010.csv",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Work Product/Figures/Graphs/VIUS/stylesheets/em_payload_commodity.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/California Well-to-wheel/Model/PEMS/post_analysis.py",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Visualize/speed_distribution_alt.html",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/sensitivity_c8_2010.json",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Output_data/sensitivity_c8_2010.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Input_data/Route_R.csv",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/scripts/visualize_duty_cycle.py",
+		"/Users/Mike/Dropbox/Doctoral_Thesis/Qualification Exam/Models/gem-v1.0-matlab 2/param_files/engine_map_350.m",
+		"/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Marginal Allocation/Model/Input_data/driveschedule.csv"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"length",
+			"57196",
+			"counties",
+			"org",
+			"%",
+			"food",
+			"ogr2",
+			"where",
+			"select",
+			"from",
+			"as",
+			"journaldetail",
+			"us_paper_summary",
+			"us_rail_all_to_all_paper",
+			"network_paper_alt",
+			"network_food_alt",
+			"network_paper",
+			"us_food_summary",
+			"us_rail_all_to_all_food",
+			"network_food",
+			"network_hwy_food",
+			"ax",
+			"decim",
+			"truck_access double precision,",
+			"meat_ship",
+			"2007",
+			"faf35_data",
+			"tons_2007",
+			"faf35_data",
+			"faf_disaggregation_bridge",
+			"07",
+			"fafcommodity",
+			"CAST(0 as integer)",
+			"faf_disaggregation_bridge",
+			"counties",
+			"copy",
+			"food",
+			"meat",
+			"ln(t)",
+			"ln(i)",
+			"time",
+			"paper",
+			"meat",
+			"basical",
+			"food",
+			"df",
+			"meat",
+			"food",
+			"meat",
+			"70250",
+			"103412",
+			"133271",
+			"update",
+			"road",
+			"truck",
+			"food",
+			"term_gid",
+			"rail",
+			";",
+			"meat",
+			"ghg_paper",
+			"ghg_nealer",
+			"nealer",
+			"food",
+			"faf",
+			"numer",
+			"uplo",
+			"faf35_data",
+			"faf",
+			"double precision",
+			"update",
+			"'",
+			"UPDATE us_rail_all_to_all",
+			"us_rail_all_to_all.",
+			"us_rail_all_to_all ",
+			"ghg_nealer",
+			"310.0",
+			".tail(310)",
+			"copy",
+			"double precision",
+			"ADD",
+			"conso",
+			"radius",
+			"bridge",
+			" double precision",
+			"ADD",
+			"character varying,",
+			"float",
+			"DECIMAL",
+			"double precision",
+			"	",
+			"'",
+			"sctg=",
+			";",
+			"naics='",
+			"double precision",
+			"\"",
+			" ",
+			"NOTICE:  ",
+			"fs_rail_us",
+			"fs_rail",
+			"pop",
+			"small",
+			"shape_len",
+			"pgr",
+			"km",
+			",\n  ",
+			" numeric(7,0)",
+			" numeric(6,2)",
+			" numeric(2,0)",
+			" character varying(2)",
+			" character varying(6)",
+			" character varying(13)",
+			" character varying(1)",
+			" character varying(8)",
+			"union",
+			"rail_gid",
+			"terminal",
+			",\n  ",
+			" varying(1)",
+			"character",
+			"split_line_multipoint",
+			".the_geom",
+			".geom",
+			".gid",
+			"new_stops",
+			"pt_split",
+			"shapelytools."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"km",
+			"paper",
+			"WHERE",
+			"SELECT",
+			"FROM",
+			"AS",
+			"_t",
+			"us_paper_summary_alt",
+			"us_rail_all_to_all_paper_alt",
+			"network",
+			"network_paper_alt",
+			"us_food_summary_alt",
+			"us_rail_all_to_all_food_alt",
+			"network_food_alt",
+			"network_hwy_food_alt",
+			"truck_access double precision,\nincrease_acces double precision,",
+			"'|| _a ||'",
+			"2012",
+			"faf35_prov",
+			"tons_2012",
+			"faf35_prov",
+			"12",
+			"CAST(0 as double precision)",
+			"paper",
+			"ln_t",
+			"ln_i",
+			"food",
+			"paper",
+			"food",
+			"paper",
+			"72663",
+			"70250",
+			"103412",
+			"paper",
+			"hwy",
+			"paper",
+			"ghg_food",
+			"ghg_paper",
+			"paper",
+			"",
+			"UPDATE us_rail_all_to_all_2030",
+			"us_rail_all_to_all_2030.",
+			"us_rail_all_to_all_2030 ",
+			"ghg_2030",
+			"620.0",
+			".tail(620)",
+			"",
+			"DROP",
+			"",
+			"DROP",
+			"",
+			"numeric(18,10)",
+			"real",
+			"DECIMAL",
+			" , ",
+			" ,",
+			"",
+			"character varying(20)",
+			"character varying(10)",
+			"float",
+			"numeric(10,10)",
+			"numeric(10,3)",
+			"",
+			",",
+			"",
+			",",
+			"",
+			",",
+			"",
+			".wkb_geometry",
+			".ogc_fid",
+			"hwy2rail",
+			"rail",
+			"",
+			"truck",
+			"<div class='centered well'>",
+			"<div class=\"questionbox\">",
+			"png\" ></p>",
+			"well",
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/master/PNGs/Slide",
+			"gh-pages",
+			"https://raw.githubusercontent.com/mtaptich/WaterFacts/gh-page/PNGs/Slide",
+			"height:480px; margin-bottom:",
+			"jpg\" style=\"height:500px; margin-bottom:",
+			".jpg\" style=\"height:500px; margin-bottom: -50px;\">",
+			"img/slide",
+			"",
+			"4 - (+d.__weight_size)",
+			"4 - (+d.__weight_size - 2)",
+			".attr(\"height\", y.rangeBand()/3-1);",
+			"y(d.__name) + (+d.__weight_size - 2)*y.rangeBand()/3 - 1",
+			".attr(\"y\", function(d) { return y(d.__name) + (+d.__weight_size -2 )*y.rangeBand()/3); })",
+			".attr(\"y\", function(d) { return y(d.__name)+ (+d._weight_size-2)*y.rangeBand()/3); })",
+			"d.__name",
+			"\",\"",
+			"\",",
+			"\":\"",
+			",",
+			"color.quantiles()",
+			"d[0]",
+			".attr(\"x\", -55)\n	    	.attr(\"y\", -15)",
+			".attr(\"x\", -35)\n	    	.attr(\"y\", -15)",
+			".attr(\"x\", -15)\n	    	.attr(\"y\", -15)",
+			"top: 35",
+			".style(\"font-size\", 20)",
+			".style(\"font-size\", 20).style(\"font-weight\", \"bold\")",
+			" (1,000 kg)",
+			"(1,000 kg)",
+			"1000 kg",
+			".style(\"font-size\", 18).style(\"font-weight\", \"bold\")",
+			".style(\"font-size\", 16).style(\"font-weight\", \"bold\")",
+			".style(\"font-size\", 20).style(\"font-weight\", \"bold\")",
+			"elif(p<12):",
+			"elif(p<10):",
+			"if(p<9):",
+			".style(\"opacity\",0.55)",
+			".style(\"opacity\",0.4)",
+			".text(function(d){ return d[4]})\n				    .style(\"font-size\", 14).style(\"opacity\",0.7)",
+			"//.style(\"stroke\", function(){ if (e > 80){ return \"none\"}else{return  \"#000\"}})",
+			"a.payload, a.totE, a.x",
+			"a.totE",
+			",",
+			"",
+			"mapGHGperkm",
+			"grade=g, bsfc=200",
+			"[round(d[",
+			"[np.sum(np.array(x",
+			"good"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/Mike/Google Drive/Doctoral Thesis/Projects/Route LCA/Freightsheds/Spatial Modeling/FAF3 Disaggregation/script/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 360.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "lessons.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"PostGIS/Freightsheds/Find Geometry Azimuth in degrees for closest terminal.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 375.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
