@@ -38,11 +38,11 @@ h6 {
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -232.5px;
-    margin-left: -300px;
+    margin-top: -240px;
+    margin-left: -335px;
     }
 .intro-header .container {
-    width: 650px;
+    width: 670px;
     height: 465px;
     background: rgba(255,255,255,0.5);
 }
@@ -63,6 +63,7 @@ h6 {
     color: #130f30;
     font-size: 8em;
 }
+
 
 
 .intro-divider {
@@ -92,7 +93,8 @@ h6 {
 
 
 .intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6) !important;
+    color: #130f30;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6) !important;
 }
 
 @media(max-width:767px) {

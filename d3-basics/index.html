@@ -37,9 +37,45 @@
       </div>
     </section>
     <section>
-      <h2>Three Little Circles</h2>
+      <h2>The Basics: Three Little Circles</h2>
       <p>D3 is most useful when used to generate and manipulate visuals as <a href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics" target="_blank">SVGs</a> because SVGs can be transformed and scaled witout suffering from <a href="http://en.wikipedia.org/wiki/Pixelation" target="_blank">pixelation</a>. All major modern web browsers - including Mozilla Firefox, Internet Explorer, Google Chrome, Opera, and Safari - have at least some degree of SVG support and can render the markup directly.</p>
-      <p> Before we get into examples in d3.js, let's briefly review SVGs in html.  This will give you a better idea of how d3.js utilizes <a href="http://en.wikipedia.org/wiki/JavaScript" traget="_blank">javascript</a> to animate data visualizations. Check out the code below; it shows a SVG circle in html.</p>
+      <p> Before we get into examples in d3.js, let's briefly review SVGs in html.  This will give you a better idea of how d3.js utilizes <a href="http://en.wikipedia.org/wiki/JavaScript" traget="_blank">javascript</a> to animate data visualizations. Check out the code below; it shows a SVG circle in html. You can edit the code's elements, styles, and scripts live! </p>
+      <live-code wincol="3" h='370'><textarea><html>
+  <!-- load libraries here -->
+  <script src="http://d3js.org/d3.v3.js"></script>
+
+  <body>
+    <div id="main">
+      <svg width="300" height="600">
+        <circle cx="40" cy="60" r="10" style=""></circle>
+        <circle cx="80" cy="60" r="10" style=""></circle>
+        <circle cx="120" cy="60" r="10" style=""></circle>
+      </svg>
+
+    <!-- Styling: Add each of these lines of code one at a time into style=""
+      Ex:
+      <circle cx="40" cy="60" r="10" style="stroke: #DB2200;"></circle>
+
+      stroke: #DB2200;
+      stroke-width: 1px;
+      fill: steelblue;
+      fill-opacity: 0.5;
+      stroke-dasharray: 2,2;
+    -->
+    </div>
+  </body>
+</html></textarea></live-code>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+          <div>
+            <p>Now, try to pair the circles with the three outlines by changing each circles attributes.</p>
+            <br>
+          </div>
+      </div>
+      
       <live-code wincol="3"><textarea><html>
   <style>
   <!-- CSS goes here -->
@@ -55,29 +91,37 @@
         <circle cx="40" cy="60" r="10" style=""></circle>
         <circle cx="80" cy="60" r="10" style=""></circle>
         <circle cx="120" cy="60" r="10" style=""></circle>
-      </svg>
+      
 
-    <!-- Useful svg styles 
-      stroke: #000;
-      stroke-width: 1px;
-      fill: steelblue;
-      fill-opacity: 0.5;
-      stroke-dasharray: 2,2;
-    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Answers -->
+        <circle cx="40" cy="180" r="10" style="stroke: #000; stroke-dasharray: 1px 1px; fill:none; stroke-width: 2px"></circle>
+        <circle cx="80" cy="60" r="20" style="stroke: #000; stroke-dasharray: 1px 1px; fill:none; stroke-width: 2px"></circle>
+        <circle cx="180" cy="60" r="10" style="stroke: #000; stroke-dasharray: 1px 1px; fill:none; stroke-width: 2px"></circle>
+    </svg>
     </div>
   </body>
 </html></textarea></live-code>
-          </div>
-        </div>
-      </div>
-
 
       <div class="col-xs-12">
           <div>
             <p> I like to think of the browser (e.g., viewer), JavaScript (e.g., language), and d3.js (e.g., a library within JavaScript) as a flipbook. The <a href="http://www.w3.org/2002/07/26-dom-article.html" target="_blank">Document Object Model</a> is an interface (e.g., the page) that will allow programs and scripts to dynamically access and update the content, structure, and style of the documents (e.g, the flipping of pages). With the object model, JavaScript gets all the power it needs to create 
             dynamic HTML: </p>
             <h4>
-            <ul>
+            <ul style="line-height: 33px;">
                 <li>JavaScript can change all the HTML elements in the page</li>
                 <li>JavaScript can change all the HTML attributes in the page</li>
                 <li>JavaScript can change all the CSS styles in the page</li>
@@ -178,7 +222,7 @@
 
     <p>Mike Bostock has a great explanation of the data joing process on <a href="http://bost.ocks.org/mike/join/" target="_blank">one of his blog posts</a>.  Here is what he has to say in brief:
         <span style="margin-left: 10%; width: 80%;">
-        <blockquote style="margin-top:-30px;"> <li><p>First, <code>svg.selectAll("circle")</code> returns a new empty selection, since the SVG container was empty. The parent node of this selection is the SVG container.
+        <blockquote > <li style="margin-top:-30px;"><p>First, <code>svg.selectAll("circle")</code> returns a new empty selection, since the SVG container was empty. The parent node of this selection is the SVG container.
           <li><p>This selection is then joined to an array of data, resulting in three new selections that represent the three possible states: <i>enter</i>, <i>update</i>, and <i>exit</i>. Since the selection was empty, the update and exit selections are empty, while the enter selection contains a placeholder for each new datum.
 
           <li><p>The update selection is returned by <a href="https://github.com/mbostock/d3/wiki/Selections#wiki-data">selection.data</a>, while the enter and exit selections hang off the update selection; <a href="https://github.com/mbostock/d3/wiki/Selections#wiki-enter">selection.enter</a> thus returns the enter selection.
@@ -194,7 +238,7 @@
  
   <section style="margin-top: 30px;">
   <h2> Building Charts using SVGs and D3 </h2>
-  <p>Let's make a simple scatter plot that combines what we know about <code>svg</code>, data joining, CSS, and mouse events. </p>
+  <p>Let's make a simple scatter plot that combines what we know about <code>svg</code>, data joining, CSS, and mouse events. If you want to see how I structured the data in <code>CSV</code> format, you can download the file <a href="data/WorldGDP_GHGs.csv">here</a>. </p>
 
     <div class="col-xs-12 well">
       <div class="row">
@@ -654,6 +698,25 @@ d3.csv("data/WorldGDP_GHGs.csv", function(error, data) {
           </div>
         </div>
       </div>
+  </section>
+
+  <section style="margin-top: 600px;">
+    <div style="width:100%">
+       <div style=" float:left;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../" class="btn btn-success btn-lg"> <i class="fa fa-arrow-left fa-fw"></i><span class="network-name">Go Back</span></a>
+              </li>
+          </ul>
+        </div>
+        <div style=" float:right;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../d3-maps" class="btn btn-success btn-lg"> <span class="network-name">Next Lesson!</span><i class="fa fa-arrow-right fa-fw"></i></a>
+              </li>
+          </ul>
+        </div>
+    </div>
   </section>
 
 

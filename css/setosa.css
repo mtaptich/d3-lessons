@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 html {
-  background-color: #f0eee2;
+  background-color: #fcfcfa;
    -webkit-font-smoothing: antialiased;
 }
 body {
@@ -18,13 +18,16 @@ body {
   font-weight: 300;
   line-height: 33px;
   -webkit-font-smoothing: antialiased;
-  background-color: #f2eee3;
+  background-color: #fcfcfa;
 
 }
 
 svg text {
   font-family: "Lato", "PT Serif", serif;
 }
+
+
+
 p {
   font-size: 20px;
   display: block;
@@ -113,6 +116,7 @@ section.title .title {
   color: #4d453a;
   font-weight: normal;
   margin-left: -8px;
+  text-shadow: 0 4px 3px #eee;
 }
 section.title .by-line {
   text-align: left;
@@ -121,6 +125,7 @@ section.title .by-line {
   font-size: 1.5em;
   font-weight: 100;
   color: #777;
+  text-shadow: 0 1px 1px #eee;
 }
 h1,
 h2,
@@ -129,6 +134,7 @@ h4,
 h5 {
   font-family: Lato;
   color: #222222;
+  text-shadow: 0 1px 1px #eee;
 }
 h3 {
   font-size: 2em;
@@ -172,13 +178,25 @@ a,
   pointer-events: none;
 }
 hr {
-  margin: 17px 0 18px;
-  height: ;
-  clear: both;
-  border: solid #373121;
-  border-width: 1px 0 0;
-  border-top: 1px solid #373121;
-  border-bottom: 1px solid #d9ceae;
+  clear: both; 
+  float: none; 
+  width: 100%; 
+  height: 2px;
+  margin: 1.4em 0;
+  border: none; 
+  background: #ddd;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.5, rgb(221,221,221)),
+      color-stop(0.5, rgb(255,255,255))
+  );
+  background-image: -moz-linear-gradient(
+      center top,
+      rgb(221,221,221) 50%,
+      rgb(255,255,255) 50%
+  );
 }
 .plain-link {
   color: inherit;
@@ -319,12 +337,11 @@ ev-play-button {
   border-radius: 3px;
   position: relative;
   max-height: 100000px;
-  border-bottom: 2px solid #ccc;
-  transition: max-height 0.5s ease;
-  -o-transition: max-height 0.5s ease;
-  -ms-transition: max-height 0.5s ease; 
-  -moz-transition: max-height 0.5s ease;
-  -webkit-transition: max-height 0.5s ease;}
+
+  border-top: 1px solid #fffff8;
+  -webkit-box-shadow: 0px 5px 30px 0px rgba(85, 79, 65, 0.1);
+-moz-box-shadow:    0px 5px 30px 0px rgba(85, 79, 65, 0.1);
+box-shadow:         0px 5px 30px 0px rgba(85, 79, 65, 0.1);
 
 .well.no-padding { padding: 0; }
 
@@ -384,3 +401,5 @@ ev-play-button {
 .well.dangerbg { background: #d9534f; }
 
 .well.warningbg { background: #f0ad4e; }
+
+

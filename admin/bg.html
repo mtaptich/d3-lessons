@@ -22,7 +22,7 @@ var particles = d3.range(num).map(function(i) {
 d3.timer(step);
 
 function step() {
-  ctx.fillStyle = "rgba(255,255,255,"+(Math.random()/2)+")";
+  ctx.fillStyle = "rgba(252, 252, 250,"+(Math.random()/2)+")";
   ctx.fillRect(0,0,width,height);
   particles.forEach(function(p) {
     p[0] += Math.cos(angle);
