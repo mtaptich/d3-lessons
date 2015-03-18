@@ -1,0 +1,50 @@
+
+<canvas id="canvas"></canvas>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+var num = 3000;
+
+var canvas = document.getElementById("canvas");
+var width = canvas.width = 2000;
+var height = canvas.height = 1200;
+var ctx = canvas.getContext("2d");
+ctx.scale(2, 2);
+var angle = 1*Math.PI/180; // down
+var x = 0, y = 0;
+var color = d3.scale.ordinal()
+    .domain([0,10])
+    .range(['rgba(215,48,39,0.5)','rgba(244,109,67,0.5)','rgba(253,174,97,0.5)','rgba(254,224,144,0.5)','rgba(255,255,191,0.5)','rgba(224,243,248,0.5)','rgba(171,217,233,0.5)','rgba(116,173,209,0.5)','rgba(69,117,180,0.9)']);
+
+var particles = d3.range(num).map(function(i) {
+  return [Math.round(width*Math.random()), Math.round(height*Math.random()), Math.round(Math.random()*10)];
+}); 
+
+d3.timer(step);
+
+function step() {
+  ctx.fillStyle = "rgba(255,255,255,"+(Math.random()/2)+")";
+  ctx.fillRect(0,0,width,height);
+  particles.forEach(function(p) {
+    p[0] += Math.cos(angle);
+    p[1] += Math.sin(angle);
+    if (p[0] < 0) p[0] = width;
+    if (p[0] > width) p[0] = 0;
+    if (p[1] < 0) p[1] = height;
+    if (p[1] > height) p[1] = 0;
+    ctx.fillStyle = color(p[2]);
+    drawPoint(p);
+  });
+};
+
+function drawPoint(p) {
+  ctx.fillRect(p[0],p[1],1,1);
+};
+
+d3.select(window).on("mousemove", function(){ 
+  angle = Math.atan2(d3.event.clientY - y,d3.event.clientX -x)
+  y = d3.event.clientY, x = d3.event.clientX
+})
+</script>
+<style>
+html, body { margin: 0; padding: 0; }
+</style>
