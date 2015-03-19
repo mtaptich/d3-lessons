@@ -49,9 +49,9 @@
     </section>
     <section>
     <h2> Don't know Javascript? No problem.</h2>
-        <p>This two-part introduction to <a href="http://d3js.org/" target="_blank">d3.js</a> is intended for beginners, even those with limited exposure to <a href="http://www.codecademy.com/en/tracks/javascript" target="_blank">JavaScript</a> -- the language used by web browsers. Before we get started, let's review some the functionality of Javascript with a few live-code examples.</p>
+        <p>This two-part introduction to <a href="http://d3js.org/" target="_blank">d3.js</a> is intended for beginners, even those with limited exposure to <a href="http://www.codecademy.com/en/tracks/javascript" target="_blank">JavaScript</a> -- the language used by web browsers. Regardless of your background, I put together a few examples to get everyone (re)oriented to coding in the browser. </p>
 
-        <p>JavaScript is a type of <a href="http://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>; an approach that assigns properties and functionality to <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">objects</a> in the browser. An object has both a state (data) and behavior (code), and it can obe of <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">many types</a>. Here are the ones that matter for d3.js: </p>
+        <p>JavaScript is a type of <a href="http://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>; an approach that assigns properties and functionality to <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">objects</a> in the browser. An object has both a state (data) and behavior (code), and it can one of <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">many data types</a>. Here are the ones that matter for d3.js: </p>
         <ul class="example">
             <li>Arrays are always objects</li>
              <pre><code class="javascript"><span class="keyword">var</span> colors = ['rgb(229,245,249)','rgb(153,216,201)','rgb(44,162,95)'];
@@ -97,7 +97,7 @@
 
 }</code></pre>
 
-  <p> Okay, one last review item before we get started.  Functions in Javascript can be executed by the web browser as well as passed as objects.  To execute a function, all you need to do is place "()" behind the function variables name:</p>
+  <p> Okay, one last review item before we get started.  Functions in Javascript can be executed by the web browser as well as passed as objects.  To execute a function, all you need to do is place "()" behind the function variable's name:</p>
 
   <pre><code class="javascript"><span class="keyword">var</span> myFunction =<span class="number">function</span>() {
 
@@ -125,9 +125,9 @@ var</span> DoSomethingThenCallback =<span class="number">function</span>(number,
 // run function DoSomethingThenCallback and pass myFunction as callback;
 DoSomethingThenCallback(10, myFunction);</code></pre>
 
-  <p>Now, I am a firm believer in coding with a purpose. When you are first starting off learning Javascript, you may want to learn <em>everything</em> there is to learn about the language (broad).  I suggest that you instead only pick up the pieces of code you need in order to complete some bigger project (narrow). To give you a glimpse of what you could do in d3, check out Mike Bostock's github repo <a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank">here</a> or Christopher Viau's well-curated repository <a href="http://christopheviau.com/d3list/" target="_blank">here</a>.</p>
+  <p>Now, I am a firm believer in coding with a purpose. When you are first starting off learning JavaScript, you may want to learn <em>everything</em> there is to learn about the language (broad).  I suggest that you instead only pick up the pieces of code you need in order to complete some bigger project (narrow). To give you a glimpse of what you could do in d3, check out Mike Bostock's github repo <a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank">here</a> or Christopher Viau's well-curated repository <a href="http://christopheviau.com/d3list/" target="_blank">here</a>.</p>
 
-  <p> Here is a list of my favorites in particular order:</p>
+  <p> Here is a list of my favorite data visualization in d3.js in no particular order:</p>
   <ul>
     <li>Victor Powell's visual explanation of the <a href="http://setosa.io/pythagorean/" target="_blank">Pythagorean Theorem</a>.</li>
     <li>Anything that <a href="http://bost.ocks.org/mike/" target="_blank">Mike Bostock</a> creates <a href="http://bl.ocks.org/mbostock" target="_blank">as examples</a> or at the <a href="http://www.nytimes.com/interactive/2013/09/25/sports/americas-cup-course.html" target="_blank">New York Times</a> -- like explaining the US's winning route at the 2014 America's Cup:</li>
@@ -141,7 +141,9 @@ DoSomethingThenCallback(10, myFunction);</code></pre>
     <li><a href="http://bost.ocks.org/mike/nations/" target="_blank">Wealth and Health of Nations</a> by Mike Bostock again but made famous by <a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen" target="_blank">Tom Carden of Gapminder</a>:  </li>
     <p id="wrap">
         <button class="btn btn-default btn-sm" id="play">Click to Start</button>
+     
         <iframe data-src="http://bost.ocks.org/mike/nations/#chart" src="about:blank" scrolling ="no" frameborder="0" height="560px" width="1000px" id="healthandwealth" ></iframe> 
+        <h5>Key: Purple (Europe), Red (Americas), Brown (East Asia / Pacific), Blue (Africa), Orange (South Asia / Middle East)</h5>
     </p>
     <li>This way of visualizing multivariate data by <a href="http://benjiec.github.io/scatter-matrix/demo/demo.html" target="_blank">benjiec</a>.</li>
     <li>Gridlock vs. bottlenecks explained by <a href="http://setosa.io/blog/2014/09/02/gridlock/" target="_blank">Lewis Lehe</a>.</li>
