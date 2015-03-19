@@ -27,7 +27,6 @@ svg text {
 }
 
 
-
 p {
   font-size: 20px;
   display: block;
@@ -36,6 +35,29 @@ p {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
 }
+
+ul {
+  font-size: 20px;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+ul.example li {
+  margin-left: 30px;
+}
+
+ul.example pre  {
+  margin-left: 60px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 50px;
+  width: 700px;
+  border: #eee solid 1px;
+}
+
 
 code, textarea {
   font-family: "Menlo", monospace;
