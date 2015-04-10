@@ -49,57 +49,40 @@
     </section>
     <section>
     <h2> Don't know Javascript? No problem.</h2>
-        <p>This two-part introduction to <a href="http://d3js.org/" target="_blank">d3.js</a> is intended for beginners, even those with limited exposure to <a href="http://www.codecademy.com/en/tracks/javascript" target="_blank">JavaScript</a> -- the language used by web browsers. Regardless of your background, I put together a few examples to get everyone (re)oriented to coding in the browser. </p>
+      <p>This two-part introduction to <a href="http://d3js.org/" target="_blank">d3.js</a> is intended for beginners, even those with limited exposure to <a href="http://www.codecademy.com/en/tracks/javascript" target="_blank">JavaScript</a> -- the language used by web browsers. Regardless of your background, I put together a few examples to get everyone (re)oriented to coding in the browser. </p>
+      <br>
 
-        <p>JavaScript is a type of <a href="http://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>; an approach that assigns properties and functionality to <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">objects</a> in the browser. An object has both a state (data) and behavior (code), and it can one of <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">many data types</a>. Here are the ones that matter for d3.js: </p>
-        <ul class="example">
-            <li>Arrays are always objects</li>
+      <h3>Javascript Variables</h3>
+      <p>JavaScript is a type of <a href="http://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>; an approach that assigns properties and functionality to <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">objects</a> in the browser. An object has both a state (data) and behavior (code), and it can one of <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">many data types</a>. Here are the ones that matter for d3.js: </p>
+      <ul class="example">
+        <li>Arrays are always objects</li>
              <pre><code class="javascript"><span class="keyword">var</span> colors = ['rgb(229,245,249)','rgb(153,216,201)','rgb(44,162,95)'];
 
 <span class="keyword">var</span> person = {firstName:"John", lastName:"Doe", age:46};
 
 <span class="keyword">var</span> data = [1,2,3,4];
 </code></pre>
-            <li>Functions are always objects</li>
-            <pre><code class="javascript"><span class="number">function</span> double(input){
-  return input * 2
+            
+        <li>Objects of objects are objects (<--pretty existential)</li>
+            <pre><code class="javascript"><span class="keyword">var</span> person = {firstName:"John", lastName:"Doe", age:46};
+
+<span class="keyword">var</span> age = person.age;</code></pre>
+
+        <li>Functions are always objects because they have both properties and methods</li>
+            <pre><code class="javascript"><span class="number">function</span> double(a,b){
+  // arguments.length property returns the number of arguments received 
+  // when the function was invoked
+  return input * arguments.length
 }
 
 <span class="keyword">var</span> double = <span class="number">function</span>(input){
   return input * 2
 }</code></pre>
-            <li>Objects of objects are objects (<--pretty existential)</li>
-            <pre><code class="javascript"><span class="keyword">var</span> person = {firstName:"John", lastName:"Doe", age:46};
+      </ul>
 
-<span class="keyword">var</span> age = person.age;</code></pre>
-        </ul>
-
-        <h3>More on Javascript Functions</h3>
-
-        <p> In each of the previous examples, we designated variables using <code>var</code>. Like other programming languages, Javascript sets a limit (e.g., scope) to the set of variables, objects, and functions you have access to while the code is running. Local JavaScript variables are declared <em>within</em> functions, while global variables are declared <em>outside of</em> functions. Global variables can be accessed and updated throughout the body of your script (including within functions), while local variables can only be accessed within the function in which they are declared.</p>
-
-        <p> Local Example:</p>
-        <pre><code class="javascript">// two backslashes starts a comment
-// code here can not use carName
-
-<span class="number">function</span> myFunction() {
-    <span class="keyword">var</span> carName = "Volvo";
-    // code here can use carName
-
-}</code></pre>
-
-<p> Global Example:</p>
-        <pre><code class="javascript"><span class="keyword">var</span> carName = " Volvo";
-
-// code here can use carName
-
-<span class="number">function</span> myFunction() {
-
-    // code here can use  carName 
-
-}</code></pre>
-
-  <p> Okay, one last review item before we get started.  Functions in Javascript can be executed by the web browser as well as passed as objects.  To execute a function, all you need to do is place "()" behind the function variable's name:</p>
+      <br>
+      <p> Notice that you can declare functions using two different syntaxes. There are some technical <a href="http://stackoverflow.com/questions/1925976/declaring-functions-in-javascript" target="_blank">differences</a> in the syntaxes, but these differences will not affect the performance of your d3 code unless you are a serious programmer.</p>
+      <p> Functions in JavaScript can be executed by the web browser as well as passed as objects to be used later.  To execute a function, all you need to do is place "()" behind the function variable's name:</p>
 
   <pre><code class="javascript"><span class="keyword">var</span> myFunction =<span class="number">function</span>() {
 
@@ -107,11 +90,11 @@
 
 }
 
-// run function
+// execute function
 myFunction();</code></pre>
-
-<p>However, you can also pass a function along to another function to run once it completes its originally assigned task.  This process is called a <a href="http://www.w3schools.com/jquery/jquery_callback.asp" target="_blank">callback function</a>. </p>
-
+      <br>
+      <p>However, you can also pass a function along to another function to run once it completes its originally assigned task.  This process is called a <a href="http://www.w3schools.com/jquery/jquery_callback.asp" target="_blank">callback function</a>. </p>
+      <br>
 <pre><code class="javascript"><span class="keyword">var</span> myFunction =<span class="number">function()</span> {
 
     // Code here probably does something important after you do something first. 
@@ -127,39 +110,72 @@ var</span> DoSomethingThenCallback =<span class="number">function</span>(number,
 // run function DoSomethingThenCallback and pass myFunction as callback;
 DoSomethingThenCallback(10, myFunction);</code></pre>
 
-  <p>Now, I am a firm believer in coding with a purpose. When you are first starting off learning JavaScript, you may want to learn <em>everything</em> there is to learn about the language (broad).  I suggest that you instead only pick up the pieces of code you need in order to complete some bigger project (narrow). To give you a glimpse of what you could do in d3, check out Mike Bostock's github repo <a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank">here</a> or Christopher Viau's well-curated repository <a href="http://christopheviau.com/d3list/" target="_blank">here</a>.</p>
+      <br>
+      <p>Functions are often passed as objects in d3.js. You will learn that, for selection operators (ex., defining a circle radius), you can specify the value either as a constant or a function. If you specify a function, it will be invoked for each element in your selection (in order), being passed the current datum d and the current index i, with the this context as the current DOM element. The function's return value is then used to set each element's attribute. </p>
+      <br>
+<pre><code class="javascript"><span class="keyword">var</span> circles = SvgWithData.append("circle")
+                  .attr("r", <span class="number">function</span>(d,i){ return RadiusSize * i}); // <-- callback example</code></pre>
 
-  <p> Here is a list of my favorite data visualization in d3.js in no particular order:</p>
-  <ul>
-    <li>Victor Powell's visual explanation of the <a href="http://setosa.io/pythagorean/" target="_blank">Pythagorean Theorem</a>.</li>
-    <li>Anything that <a href="http://bost.ocks.org/mike/" target="_blank">Mike Bostock</a> creates <a href="http://bl.ocks.org/mbostock" target="_blank">as examples</a> or at the <a href="http://www.nytimes.com/interactive/2013/09/25/sports/americas-cup-course.html" target="_blank">New York Times</a> -- like explaining the US's winning route at the 2014 America's Cup:</li>
-    <p>
-        <iframe src="http://www.nytimes.com/interactive/2013/09/25/sports/americas-cup-course.html#interactiveFreeFormMain" scrolling ="no" frameborder="0" height="560px" width="100%"></iframe> 
-    </p>
-    <li><a href="http://air.nullschool.net/" target="_blank">This</a> crazy map showing wind speeds in Tokyo, Japan.</li>
-    <li>Mike Barry and Brian Card's visualizations of <a href="http://mbtaviz.github.io/" target="_blank">subway ridership in Boston</a>.</li>
-    <li>Square's crazy fast <a href="http://square.github.io/crossfilter/" target="_blank">filtering library</a> applied to airplaine data.</li>
-    <li>For the life of me, I can't find the original source, but creating networks using click and drag mouse events (<a href="http://ce11gsi.appspot.com/stylesheets/process_LCA.html" target="_blank">I used this in one of my engineering classes as an example</a>). </li>
-    <li><a href="http://bost.ocks.org/mike/nations/" target="_blank">Wealth and Health of Nations</a> by Mike Bostock again but made famous by <a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen" target="_blank">Tom Carden of Gapminder</a>:  </li>
-    <p id="wrap">
-        <button class="btn btn-default btn-sm" id="play">Click to Start</button>
-     
-        <iframe data-src="http://bost.ocks.org/mike/nations/#chart" src="about:blank" scrolling ="no" frameborder="0" height="560px" width="1000px" id="healthandwealth" ></iframe> 
-        <h5>Key: Purple (Europe), Red (Americas), Brown (East Asia / Pacific), Blue (Africa), Orange (South Asia / Middle East)</h5>
-    </p>
-    <li>This way of visualizing multivariate data by <a href="http://benjiec.github.io/scatter-matrix/demo/demo.html" target="_blank">benjiec</a>.</li>
-    <li>Gridlock vs. bottlenecks explained by <a href="http://setosa.io/blog/2014/09/02/gridlock/" target="_blank">Lewis Lehe</a>.</li>
-    <li>Jason Davies animated <a href="http://www.jasondavies.com/animated-bezier/" target="_blank">Bezier</a> curves. </li>
-    <li>All the <a href="https://github.com/mbostock/d3/wiki/Gallery#basic-charts" target="_blank">basic charts</a> that I use in my research from the d3.js example page.</li>
-    <li>And all the new stuff the internet is creating:</li>
-    <br>
+      <br>
+      <h3>Variable Declarations</h3>
 
-    <a class="twitter-timeline" href="https://twitter.com/hashtag/d3js" data-widget-id="578386683508363264" >#d3js Tweets</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <p> In each of the previous examples, we designated variables using <code>var</code>. Like other programming languages, Javascript sets a limit (e.g., scope) to the set of variables, objects, and functions you have access to while the code is running. Local JavaScript variables are declared <em>within</em> functions, while global variables are declared <em>outside of</em> functions. Global variables can be accessed and updated throughout the body of your script (including within functions), while local variables can only be accessed within the function in which they are declared.</p>
 
-  </ul>
-  <br>
-  <p>With all this background, you should have the basic tools to start making data visualizations.</p>
+      <p> Local Example:</p>
+        <pre><code class="javascript">// two backslashes starts a comment
+// code here can not use carName
+
+<span class="number">function</span> myFunction() {
+    <span class="keyword">var</span> carName = "Volvo";
+    // code here can use carName
+
+}</code></pre>
+      <br>
+      <p> Global Example:</p>
+        <pre><code class="javascript"><span class="keyword">var</span> carName = " Volvo";
+
+// code here can use carName
+
+<span class="number">function</span> myFunction() {
+
+    // code here can use  carName 
+
+}</code></pre>
+      <br>
+      <h3>My Coding Philosophy</h3>
+      <p>Now, I am a firm believer in coding with a purpose. When you are first starting off learning JavaScript, you may want to learn <em>everything</em> there is to learn about the language (broad).  I suggest that you instead only pick up the pieces of code you need in order to complete some bigger project (narrow). To give you a glimpse of what you could do in d3, check out Mike Bostock's github repo <a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank">here</a> or Christopher Viau's well-curated repository <a href="http://christopheviau.com/d3list/" target="_blank">here</a>.</p>
+
+      <p> Here is a list of my favorite data visualization in d3.js in no particular order:</p>
+      <ul>
+        <li>Victor Powell's visual explanation of the <a href="http://setosa.io/pythagorean/" target="_blank">Pythagorean Theorem</a>.</li>
+        <li>Anything that <a href="http://bost.ocks.org/mike/" target="_blank">Mike Bostock</a> creates <a href="http://bl.ocks.org/mbostock" target="_blank">as examples</a> or at the <a href="http://www.nytimes.com/interactive/2013/09/25/sports/americas-cup-course.html" target="_blank">New York Times</a> -- like explaining the US's winning route at the 2014 America's Cup:</li>
+        <p>
+            <iframe src="http://www.nytimes.com/interactive/2013/09/25/sports/americas-cup-course.html#interactiveFreeFormMain" scrolling ="no" frameborder="0" height="560px" width="100%"></iframe> 
+        </p>
+        <li><a href="http://air.nullschool.net/" target="_blank">This</a> crazy map showing wind speeds in Tokyo, Japan.</li>
+        <li>Mike Barry and Brian Card's visualizations of <a href="http://mbtaviz.github.io/" target="_blank">subway ridership in Boston</a>.</li>
+        <li>Square's crazy fast <a href="http://square.github.io/crossfilter/" target="_blank">filtering library</a> applied to airplaine data.</li>
+        <li>For the life of me, I can't find the original source, but creating networks using click and drag mouse events (<a href="http://ce11gsi.appspot.com/stylesheets/process_LCA.html" target="_blank">I used this in one of my engineering classes as an example</a>). </li>
+        <li><a href="http://bost.ocks.org/mike/nations/" target="_blank">Wealth and Health of Nations</a> by Mike Bostock again but made famous by <a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen" target="_blank">Tom Carden of Gapminder</a>:  </li>
+        <p id="wrap">
+            <button class="btn btn-default btn-sm" id="play">Click to Start</button>
+         
+            <iframe data-src="http://bost.ocks.org/mike/nations/#chart" src="about:blank" scrolling ="no" frameborder="0" height="560px" width="1000px" id="healthandwealth" ></iframe> 
+            <h5>Key: Purple (Europe), Red (Americas), Brown (East Asia / Pacific), Blue (Africa), Orange (South Asia / Middle East)</h5>
+        </p>
+        <li>This way of visualizing multivariate data by <a href="http://benjiec.github.io/scatter-matrix/demo/demo.html" target="_blank">benjiec</a>.</li>
+        <li>Gridlock vs. bottlenecks explained by <a href="http://setosa.io/blog/2014/09/02/gridlock/" target="_blank">Lewis Lehe</a>.</li>
+        <li>Jason Davies animated <a href="http://www.jasondavies.com/animated-bezier/" target="_blank">Bezier</a> curves. </li>
+        <li>All the <a href="https://github.com/mbostock/d3/wiki/Gallery#basic-charts" target="_blank">basic charts</a> that I use in my research from the d3.js example page.</li>
+        <li>And all the new stuff the internet is creating:</li>
+        <br>
+
+        <a class="twitter-timeline" href="https://twitter.com/hashtag/d3js" data-widget-id="578386683508363264" >#d3js Tweets</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+      </ul>
+      <br>
+      <p>With all this background, you should have the basic tools to start making data visualizations.</p>
 
 
   </section>
