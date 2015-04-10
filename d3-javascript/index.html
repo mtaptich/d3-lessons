@@ -111,7 +111,7 @@ var</span> DoSomethingThenCallback =<span class="number">function</span>(number,
 DoSomethingThenCallback(10, myFunction);</code></pre>
 
       <br>
-      <p>Functions are often passed as objects in d3.js. You will learn that, for selection operators (ex., defining a circle radius), you can specify the value either as a constant or a function. If you specify a function, it will be invoked for each element in your selection (in order), being passed the current datum d and the current index i, with the this context as the current DOM element. The function's return value is then used to set each element's attribute. </p>
+      <p>Functions are often passed as objects in d3.js. For instance, you will learn that, for selection operators (ex., defining a circle radius), you can specify a value either as a constant or a function. If you specify a function, it will be invoked for each element in your selection (in order), being passed the current datum d and the current index i, with the this context as the current DOM element. The function's return value is then used to set each element's attribute. </p>
       <br>
 <pre><code class="javascript"><span class="keyword">var</span> circles = SvgWithData.append("circle")
                   .attr("r", <span class="number">function</span>(d,i){ return RadiusSize * i}); // <-- callback example</code></pre>
