@@ -115,7 +115,6 @@ DoSomethingThenCallback(10, myFunction);</code></pre>
       <br>
 <pre><code class="javascript"><span class="keyword">var</span> circles = SvgWithData.append("circle")
                   .attr("r", <span class="number">function</span>(d,i){ return RadiusSize * i}); // <-- callback example</code></pre>
-
       <br>
       <h3>Variable Declarations</h3>
 
@@ -141,6 +140,49 @@ DoSomethingThenCallback(10, myFunction);</code></pre>
     // code here can use  carName 
 
 }</code></pre>
+      <br>
+      <h3>Learning About Your Web Browser</h3>
+      <br>
+      <p>For many of you, this may be the first time you had to your your browser as a tool. Let's quickly step through some key functionalities: </p>
+
+      <p><a href="https://developer.chrome.com/devtools/docs/console" target="_blank"> The Console</a>:</p>
+      <ul>
+        <li> Right click anywhere on this page and choose 'Inspect Element.'</li>
+        <li> In Google Chrome, you will see a list of tabs (Element, Network,...) and an arrow to its right.  Click that to expand the tabs list and choose "Console."</li>
+        <li>This is used to log diagnostic information to help debug your web page or application.</li>
+        <li> You can also you it to compile JavaScript while the browser is open. Type this in the console:<pre><code class="javascript"><span class="keyword">var</span> a = 3;
+a*4
+</code></pre>
+  
+        </li>
+        <li>To log variable values in the console, all you need to do is add <code>console.log({some value})</code> to your Javascript code</li>
+      </ul>
+      <br>
+      <p><a href="http://bl.ocks.org/mbostock/5247027" target="_blank"> Mouse Events</a>:</p>
+      <div class="container">
+        <div class="col-xs-12">
+          <p> Mouse over the image below and see the logged mouse coordinates associated with each mouse event.</p>
+          <img src="../img/square.png"
+           ng-mousedown="onMouseDown($event)"
+           ng-mouseup="onMouseUp($event)"
+           ng-mouseenter="onMouseEnter($event)"
+           ng-mouseleave="onMouseLeave($event)"
+           ng-mousemove="onMouseMove($event)"
+           ng-mouseover="onMouseOver($event)" 
+           class="well"
+           /><br />
+        </div>
+        <div class="col-xs-4">
+          <strong>mousedown:</strong> {{onMouseDownResult}}<br />
+          <strong>mouseup:</strong> {{onMouseUpResult}}<br />
+          <strong>mouseenter:</strong> {{onMouseEnterResult}}<br />
+        </div>
+        <div class="col-xs-8">
+          <strong>mouseleave:</strong> {{onMouseLeaveResult}}<br />
+          <strong>mousemove:</strong> {{onMouseMoveResult}}<br />
+          <strong>mouseover:</strong> {{onMouseOverResult}} <br/>
+        </div>
+      </div>
       <br>
       <h3>My Coding Philosophy</h3>
       <p>Now, I am a firm believer in coding with a purpose. When you are first starting off learning JavaScript, you may want to learn <em>everything</em> there is to learn about the language (broad).  I suggest that you instead only pick up the pieces of code you need in order to complete some bigger project (narrow). To give you a glimpse of what you could do in d3, check out Mike Bostock's github repo <a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank">here</a> or Christopher Viau's well-curated repository <a href="http://christopheviau.com/d3list/" target="_blank">here</a>.</p>
