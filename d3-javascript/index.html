@@ -56,20 +56,23 @@
       <p>JavaScript is a type of <a href="http://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented programming</a>; an approach that assigns properties and functionality to <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">objects</a> in the browser. An object has both a state (data) and behavior (code), and it can one of <a href="http://www.w3schools.com/js/js_object_definition.asp" target="_blank">many data types</a>. Here are the ones that matter for d3.js: </p>
       <ul class="example">
         <li>Arrays are always objects</li>
-             <pre><code class="javascript"><span class="keyword">var</span> colors = ['rgb(229,245,249)','rgb(153,216,201)','rgb(44,162,95)'];
+      </ul>
+             <pre class="highlight"><code class="javascript"><span class="keyword">var</span> colors = ['rgb(229,245,249)','rgb(153,216,201)','rgb(44,162,95)'];
 
 <span class="keyword">var</span> person = {firstName:"John", lastName:"Doe", age:46};
 
 <span class="keyword">var</span> data = [1,2,3,4];
 </code></pre>
-            
+      <ul class="example">     
         <li>Objects of objects are objects (<--pretty existential)</li>
-            <pre><code class="javascript"><span class="keyword">var</span> person = {firstName:"John", lastName:"Doe", age:46};
+      </ul>
+            <pre class="highlight"><code class="javascript"><span class="keyword">var</span> person = {firstName:"John", lastName:"Doe", age:46};
 
 <span class="keyword">var</span> age = person.age;</code></pre>
-
+      <ul class="example"> 
         <li>Functions are always objects because they have both properties and methods</li>
-            <pre><code class="javascript"><span class="number">function</span> double(a,b){
+      </ul>
+            <pre class="highlight"><code class="javascript"><span class="number">function</span> double(a,b){
   // arguments.length property returns the number of arguments received 
   // when the function was invoked
   return input * arguments.length
@@ -81,10 +84,11 @@
       </ul>
 
       <br>
+
       <p> Notice that you can declare functions using two different syntaxes. There are some technical <a href="http://stackoverflow.com/questions/1925976/declaring-functions-in-javascript" target="_blank">differences</a> in the syntaxes, but these differences will not affect the performance of your d3 code unless you are a serious programmer.</p>
       <p> Functions in JavaScript can be executed by the web browser as well as passed as objects to be used later.  To execute a function, all you need to do is place "()" behind the function variable's name:</p>
 
-  <pre><code class="javascript"><span class="keyword">var</span> myFunction =<span class="number">function</span>() {
+  <pre class="highlight"><code class="javascript"><span class="keyword">var</span> myFunction =<span class="number">function</span>() {
 
     // code here probably does something important
 
@@ -95,7 +99,7 @@ myFunction();</code></pre>
       <br>
       <p>However, you can also pass a function along to another function to run once it completes its originally assigned task.  This process is called a <a href="http://www.w3schools.com/jquery/jquery_callback.asp" target="_blank">callback function</a>. </p>
       <br>
-<pre><code class="javascript"><span class="keyword">var</span> myFunction =<span class="number">function()</span> {
+<pre class="highlight"><code class="javascript"><span class="keyword">var</span> myFunction =<span class="number">function()</span> {
 
     // Code here probably does something important after you do something first. 
 
@@ -113,7 +117,7 @@ DoSomethingThenCallback(10, myFunction);</code></pre>
       <br>
       <p>Functions are often passed as objects in d3.js. For instance, you will learn that, for selection operators (ex., defining a circle radius), you can specify a value either as a constant or a function. If you specify a function, it will be invoked for each element in your selection (in order), being passed the current datum d and the current index i, with the this context as the current DOM element. The function's return value is then used to set each element's attribute. </p>
       <br>
-<pre><code class="javascript"><span class="keyword">var</span> circles = SvgWithData.append("circle")
+<pre class="highlight"><code class="javascript"><span class="keyword">var</span> circles = SvgWithData.append("circle")
                   .attr("r", <span class="number">function</span>(d,i){ return RadiusSize * i}); // <-- callback example</code></pre>
       <br>
       <h3>Variable Declarations</h3>
@@ -121,7 +125,7 @@ DoSomethingThenCallback(10, myFunction);</code></pre>
       <p> In each of the previous examples, we designated variables using <code>var</code>. Like other programming languages, Javascript sets a limit (e.g., scope) to the set of variables, objects, and functions you have access to while the code is running. Local JavaScript variables are declared <em>within</em> functions, while global variables are declared <em>outside of</em> functions. Global variables can be accessed and updated throughout the body of your script (including within functions), while local variables can only be accessed within the function in which they are declared.</p>
 
       <p> Local Example:</p>
-        <pre><code class="javascript">// two backslashes starts a comment
+        <pre class="highlight"><code class="javascript">// two backslashes starts a comment
 // code here can not use carName
 
 <span class="number">function</span> myFunction() {
@@ -131,7 +135,7 @@ DoSomethingThenCallback(10, myFunction);</code></pre>
 }</code></pre>
       <br>
       <p> Global Example:</p>
-        <pre><code class="javascript"><span class="keyword">var</span> carName = " Volvo";
+        <pre class="highlight"><code class="javascript"><span class="keyword">var</span> carName = " Volvo";
 
 // code here can use carName
 
@@ -150,7 +154,7 @@ DoSomethingThenCallback(10, myFunction);</code></pre>
         <li> Right click anywhere on this page and choose 'Inspect Element.'</li>
         <li> In Google Chrome, you will see a list of tabs (Element, Network,...) and an arrow to its right.  Click that to expand the tabs list and choose "Console."</li>
         <li>This is used to log diagnostic information to help debug your web page or application.</li>
-        <li> You can also you it to compile JavaScript while the browser is open. Type this in the console:<pre><code class="javascript"><span class="keyword">var</span> a = 3;
+        <li> You can also you it to compile JavaScript while the browser is open. Type this in the console:<pre class="highlight"><code class="javascript"><span class="keyword">var</span> a = 3;
 a*4
 </code></pre>
   

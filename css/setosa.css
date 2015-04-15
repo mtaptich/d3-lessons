@@ -63,9 +63,6 @@ code, textarea {
   font-family: "Menlo", monospace;
 }
 
-code {
-  line-height: 1em;
-}
 
 .html .attribute,
 .css .attribute,
@@ -83,17 +80,34 @@ code {
   color: #31a354;
 }
 
+
 pre {
   border: none;
-  border-left: solid 2px #ccc;
-  padding-left: 50px;
+  border-left: solid 10px #ccc;
+  padding-left: 18px;
+  margin: 2em 0 2em 5px;
+  width: 960px;
+  overflow-x: auto;
   background-color: #fff;
+  display: block;
+  border-radius: 0px;
 }
 
-code{
-  background-color: #fff;
-  line-height: 1.4em;
+pre.highlight{
+  -webkit-box-shadow: 0px 5px 30px 0px rgba(85, 79, 65, 0.1);
+  -moz-box-shadow:    0px 5px 30px 0px rgba(85, 79, 65, 0.1);
+  box-shadow:         0px 5px 30px 0px rgba(85, 79, 65, 0.1);
 }
+
+
+
+pre code {
+  line-height: 1.5em;
+  font-size: 16px;
+  color: #000;
+  -webkit-font-smoothing: antialiased; 
+}
+
 
 evt {
         padding: 0px 4px 2px 4px;

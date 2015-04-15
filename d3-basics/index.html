@@ -175,7 +175,7 @@
 
       <p>As you can see above, the <a href="https://github.com/mbostock/d3/wiki/Selections#wiki-append">append</a> method allows you to create a single element. This is can be  useful in small applications.  If we want to scale this process, we need to utilize D3's <em>data join</em> methods which creates and updates elements corresponding to your data.  </p>
 
-      <pre><code class="javascript">svg.selectAll(<span class="string">"circle"</span>)
+      <pre class="highlight"><code class="javascript">svg.selectAll(<span class="string">"circle"</span>)
       .data(data)
     .enter().append(<span class="string">"circle"</span>)
       .attr(<span class="string">"cx"</span>, <span class="function"><span class="keyword">function</span><span class="params">(d)</span> {</span> <span class="keyword">return</span> d.x; })
