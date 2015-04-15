@@ -147,6 +147,7 @@ app.directive('liveCode', function($timeout){
 		scope.height = attr.h || 420;
 		scope.content= transcludeFn()[0].textContent;
 		scope.colwidth = attr.wincol || 4;
+    scope.vert = attr.vert || false;
 		var delay;
 
 		$timeout(function () {

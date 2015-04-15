@@ -1,4 +1,4 @@
-<html>
+<html ng-app="lessonapp">
   <head>
     <title>An introduction to d3.js</title>
 
@@ -6,12 +6,17 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-  
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
     <script scr="../scripts/htmlmixed.js"></script>
     <script src="../scripts/code_mirror.js"></script>
     <script src="../scripts/color.js"></script>
     <script src="../scripts/css.js"></script>
     <script src="../scripts/xml.js"></script>
+    <script src="../scripts/lesson.js"></script>
+ 
     <link href="../css/setosa.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/codemirror.css">
     
@@ -26,7 +31,7 @@
 
     </style>
   </head>
-  <body>
+  <body ng-controller="main">
     <section class="title">
       <div class="title-region">
         <h1 class="title">Live Coding D3.js (Pt. 2)</h1>
@@ -204,7 +209,42 @@
 
         <h2> Simple Example </h2>
 
-        <p>Let's try this together. Download and unpack <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/zip/state_pol.zip">this</a> map of the United States from the <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/index.html" target="_blank">National Transportation Atlas Database</a>. Then upload the .shp file to the mapshaper website below and simply it to 10% using the slider bar. <a href="http://bost.ocks.org/mike/simplify/" target="_blank">Simpifying the geometry of your data</a> can improve download time and rendering speeds. Once simplified, you can export your shapefile (13.7 MB) to topojson (428 KB).</p>
+
+        <p>Let's try this together. You can either follow along using the live code on the website or from a local web server. Here are some quick instructions on to how to get started if you choose to work locally:</p>
+
+        <p style="font-weight: bold;"> 1. Start a project folder </p>
+        <p> Create a new folder on your Desktop and name it <span style="font-weight: bold;">dlab_maps</span>.
+        </p>
+
+        <br>
+        <p style="font-weight: bold;"> 2.1 Mac Users </p>
+        <p>
+          You can run Python's built-in server.  Open the terminal and paste:<br>
+          <code><pre>python -m SimpleHTTPServer</pre></code>
+        </p>
+
+        <p> Once this is running, go to <code>http://localhost:8000/</code>. </p>
+
+        <br>
+        <p style="font-weight: bold;"> 2.2 PC Users </p>
+        <p>
+          You have a few <a href="https://github.com/mbostock/d3/wiki" target="_blank">options</a>, depending on what is installed on your computer. <a href="http://mtaptich.github.io/OnRamp/d3_event_website.html" target="_blank">In past teaching sessions</a>, I've found that NodeJS is easiest for Windows users.  Quickly download this if it applies:   
+          <iframe src="http://nodejs.org/download/" height="300px" width="100%" style="margin-top: 20px;margin-bottom: 20px;"></iframe>
+        </p>
+
+
+        <p>
+          Go to the command prompt (> Run > cmd), which is the Windows terminal, and paste:<br>
+          <code><pre>npm install http-server -g
+http-server</pre></code>
+        </p>
+
+      
+        <p> Once this is running, go to <code>http://localhost:8000/</code>. </p>
+        
+        <br>
+        <p style="font-weight: bold;"> 3. Download Spatial Data  </p>
+        <p>Download and unpack <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/zip/state_pol.zip">this</a> map of the United States from the <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/index.html" target="_blank">National Transportation Atlas Database</a>. Then upload the .shp file to the mapshaper website below and simply it to 10% using the slider bar. <a href="http://bost.ocks.org/mike/simplify/" target="_blank">Simpifying the geometry of your data</a> can improve download time and rendering speeds. Once simplified, you can export your shapefile (13.7 MB) to topojson (428 KB).</p>
 
         <div class="col-xs-12 well">
             <div class="row">
@@ -212,6 +252,7 @@
             </div>
         </div>
 
+        <p style="font-weight: bold;margin-top: 750px;"> 4. Select Projection </p>
         <p>We will use the topojson files and a map projection to <a href="http://bost.ocks.org/mike/example/" target="_blank">portray the surface of the earth</a> onto the x-y pixel coordinate system of our <code>svg</code>. Each dataset will have a unique geospatial scope, so selecting an appropriate projection to use is the first step. Here is an excellent list of the different projections provided in a <a href="https://github.com/d3/d3-geo-projection/tree/d3298df7fa2713b19929502aea7cc24efdf23ece" target="_blank">plugin</a> by <a href="https://www.jasondavies.com/" target="_blank">Jason Davies</a>, but many more are available.  </p>
 
         <div class="col-xs-12 well" style="max-height: 700px; overflow:auto;">
@@ -767,7 +808,7 @@
             </div>
         </div>
 
-        <p> For our example, let's use Lambert Conformal Conic projection, centering the projection to show only the lower-48 states. 
+        <p style="margin-top: 800px; margin-bottom: 50px;"> For our example, let's use Lambert Conformal Conic projection, centering the projection to show only the lower-48 states. 
 
         <div class="col-xs-12 well">
             <div class="row">
@@ -788,7 +829,7 @@
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> // optional, depending on projection
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
 <script>
 
 var width = 960,
@@ -845,7 +886,9 @@ d3.json("state_pol.json", function(error, us) { // passes an error and object va
                 </div>
             </div>
         </div>
-        <p> Now, let's add some data to this map! Download <a href="http://mtaptich.github.io/d3_live_code_2/ports_major.csv">this</a> CSV file listing the location of the top 150 ports in the United States, which was taken from the <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/index.html" target="_blank">National Transportation Atlas Database</a>. I converted the original file from .shp to .csv using <code>ogr2ogr</code> because this is a more familiar data format among beginners. 
+
+        <p style="margin-top: 1150px; font-weight: bold;"> 5. Add Data to the Map </p>
+        <p style=" margin-bottom: 50px;"> Now, let's add some data to this map! Download <a href="http://mtaptich.github.io/d3_live_code_2/ports_major.csv">this</a> CSV file listing the location of the top 150 ports in the United States, which was taken from the <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/index.html" target="_blank">National Transportation Atlas Database</a>. I converted the original file from .shp to .csv using <code>ogr2ogr</code> because this is a more familiar data format among beginners. 
 
         <div class="col-xs-12 well">
             <div class="row">
@@ -873,7 +916,7 @@ d3.json("state_pol.json", function(error, us) { // passes an error and object va
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> // optional, depending on projection
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
 <script>
 
 var width = 960,
@@ -954,7 +997,8 @@ function ready(error, us, ports){ // passes an error and object variables for th
             </div>
         </div>
 
-        <p> Finally, add the zoom function used in the first examples to allow users to inspect portions of our map with greater resolution.</p>
+        <p style="margin-top: 1150px; font-weight: bold;"> 6. Allow the User to Zoom </p>
+        <p style=" margin-bottom: 50px;"> Add the zoom function used in the first examples to allow users to inspect portions of our map with greater resolution.</p>
 
         <div class="col-xs-12 well">
             <div class="row">
@@ -982,7 +1026,7 @@ function ready(error, us, ports){ // passes an error and object variables for th
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
-<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> // optional, depending on projection
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
 <script>
 
 var width = 960,
@@ -1071,6 +1115,171 @@ svg.call(zoom);
                 </div>
             </div>
         </div>
+
+        <p style="margin-top: 1150px;  font-weight: bold;"> 7. Add Tooltips </p>
+        <p > We can provide further interactions between the user and our data by including a tooltip function. Tooltips allow you to display element-specific data in conjunction with different mouse events (e.g., hover, click, etc.).  Check out the quick example below:</p>
+
+        <live-code wincol="4"><textarea><!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+
+text {
+  font: 10px sans-serif;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+  var svg = d3.select("body").append("svg")
+              .attr('width', 300 )
+              .attr('height', 300);
+
+  var tooltip = d3.select("body")
+              .append("div")
+              .style("position", "absolute")
+              .style("z-index", "10")
+              .style("visibility", "hidden")
+              .style("color", "white")
+              .style("padding", "8px")
+              .style("background-color", "rgba(0, 0, 0, 0.75)")
+              .style("border-radius", "6px")
+              .style("font", "12px sans-serif")
+              .text("tooltip");
+
+  var ages = [{"age": 28, "x": 20, "y": 40}, {"age": 18, "x": 60, "y": 80}, {"age": 38, "x": 100, "y": 120}];
+
+  var circle = svg.selectAll("circle")
+            .data(ages).enter()
+              .append("circle")
+              .attr("cx", function(d){ return d.x})
+              .attr('cy', function(d){ return d.y})
+              .attr('r', 10)
+              .on("mouseover", function(d) {
+                      tooltip.text( "Age : " + d.age +" years old");
+                      tooltip.style("visibility", "visible");
+              })
+              .on("mousemove", function() {
+                  return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+              })
+              .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+
+</script>
+</html></textarea></live-code>
+
+        <p style="margin-top: 550px; "> Now, add a tooltip to display information regarding  </p>
+
+        <live-code vert="true" h="550"><textarea><!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+.ports{
+    fill:red;
+    fill-opacity: 0.3;
+    stroke-width: 1px;
+    stroke: red;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .style("color", "white")
+    .style("padding", "8px")
+    .style("background-color", "rgba(0, 0, 0, 0.75)")
+    .style("border-radius", "6px")
+    .style("font", "12px sans-serif")
+    .text("tooltip");
+
+// Create a scale that maps total tonnage to a radius size between 2 and 30 pixels
+var port_size = d3.scale.linear().domain([0, 252070000]).range([2,30]);
+
+// Create a scientific number format
+var scinum = d3.format(".1e");
+
+// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+function ready(error, us, ports){ // passes an error and object variables for the states and ports
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("class", function(d) {return d.id})
+      .attr("d", path)
+
+    // map the GPS coordinates to 
+  svg.append("g")
+    .selectAll("circle")
+   .data(ports).enter()
+    .append("circle")
+    .attr("class", "ports")
+    .attr("cx", function(d) {
+           return projection([d["long"], d["lat"] ])[0]; // return x location on svg
+           })
+    .attr("cy", function(d) {
+           return projection([d["long"],d["lat"] ])[1]; // return 7 location on svg
+           })
+    .attr("r", function(d){ return port_size(+d.TOTAL)})
+    .on("mouseover", function(d) {
+                      console.log(d);
+                      tooltip.text( "Total : " + scinum(d.TOTAL) +" tons per year" );
+                      tooltip.style("visibility", "visible");
+              })
+              .on("mousemove", function() {
+                  return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+              })
+              .on("mouseout", function(){return tooltip.style("visibility", "hidden");});    
+};
+
+var zoom = d3.behavior.zoom()
+  .on("zoom",function() {
+    // Using d3 mouse events, dynamically update translation and scale.
+    svg.selectAll("g").attr("transform","translate("+ 
+        d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+});
+
+svg.call(zoom); 
+
+</script>
+          
+
+
+        </textarea></live-code>
 
 
   </section>
