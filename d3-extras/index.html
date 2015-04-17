@@ -1,0 +1,363 @@
+<html ng-app="lessonapp">
+  <head>
+    <title>An introduction to d3.js</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script scr="../scripts/htmlmixed.js"></script>
+    <script src="../scripts/code_mirror.js"></script>
+    <script src="../scripts/color.js"></script>
+    <script src="../scripts/css.js"></script>
+    <script src="../scripts/xml.js"></script>
+    <script src="../scripts/lesson.js"></script>
+ 
+    <link href="../css/setosa.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/codemirror.css">
+    
+    
+    <style>
+    ul{font-size: 18px;}
+
+    table.center {
+        margin-left:auto; 
+        margin-right:auto;
+      }
+
+    </style>
+  </head>
+  <body ng-controller="main">
+    <section class="title">
+      <div class="title-region">
+        <h1 class="title">Live Coding D3.js (Pt. 2)</h1>
+        <h3 class="by-line">
+          <ul class="list-inline">
+            <li><a href="mailto:m.taptich@berkeley.edu"><i class="fa fa-envelope-o fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/MikeTaptich"><i class="fa fa-twitter fa-2x"></a></i></li>
+            <li><a href="http://www.linkedin.com/pub/michael-taptich/21/263/b28/"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+            <li><a href="https://github.com/mtaptich"><i class="fa fa-github fa-2x"></i></a></li>
+          </ul>
+        </h3>
+
+      </div>
+    </section>   
+    <section>
+      <h2>Additional Map Features</h2>
+
+      <p>Point Translation: </p>
+      <live-code vert="true" h="500"><textarea><!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+
+circle {
+  fill: steelblue;
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+.journey{
+  fill: none;
+  stroke: #000;
+  stroke-width: 4;
+  stroke-dasharray: 4px,8px;
+}
+</style>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var points = [
+  [-122.2728, 37.8717],
+  [-104.9903, 39.7392],
+  [-93.2650, 44.9778],
+  [-75.6008, 41.0144],
+  [-86.7833, 36.1667],
+  [-96.7970, 32.7767],
+  [-110.9264,32.2217]
+];
+
+var line = d3.svg.line()
+    .interpolate("cardinal-closed")
+    .x(function(d) { return projection(d)[0]; })
+    .y(function(d) { return projection(d)[1]; });
+
+queue()
+    .defer(d3.json, "../d3-maps/state_pol.json")
+    .await(ready);
+
+function ready (error, us) { 
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) 
+    .enter().append("path")
+      .attr("class", function(d) {return d.id})
+      .attr("d", path)
+  
+  var linepath = svg.append("path")
+      .data([points])
+      .attr("d", line)
+      .attr('class', 'journey');
+
+  svg.selectAll(".point")
+      .data(points)
+    .enter().append("circle")
+      .attr("r", 8)
+      .attr("transform", function(d) { return "translate(" + projection(d) + ")"; });
+
+  var circle = svg.append("circle")
+      .attr("r", 19)
+      .attr("transform", "translate(" + projection(points[0]) + ")");
+
+  // Create a loop by calling 'itself' as a callback function
+  transition();
+
+  function transition() {
+    circle.transition()
+        .duration(10000)
+        .attrTween("transform", translateAlong(linepath.node()))
+        .each("end", transition);
+  }
+};
+
+
+// Returns an attrTween for translating along the specified path element.
+function translateAlong(path) {
+  var l = path.getTotalLength();
+  return function(d, i, a) {
+    return function(t) {
+      var p = path.getPointAtLength(t * l);
+      return "translate(" + p.x + "," + p.y + ")";
+    };
+  };
+}
+
+</script></textarea></live-code>
+
+
+      <p style="margin-top: 1130px;">Showcase Features:</p>
+      <live-code vert="true" h="500"><textarea><!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+
+.title {
+  font-family: "Lato", "PT Serif", serif;
+  font-size: 40px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+</style>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500,
+    clickOn = false;
+
+var projection = d3.geo.albersUsa()
+      .scale(800)
+      .translate([700 /2, height / 2.1]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("text")
+    .attr('class', 'title')
+    .attr('x', width/2)
+    .attr('y', 30)
+    .style('text-anchor', 'middle')
+    .text("Trigger a Transition on Click")
+
+queue()
+    .defer(d3.json, "../d3-maps/state_pol.json")
+    .await(ready);
+
+function ready (error, us) {
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) 
+    .enter().append("path")
+      .attr("class", function(d) {return d.id})
+      .attr("d", path)
+      .on("click", function(){
+        
+        if(clickOn){
+          last.style("fill", "#eee");
+          last.transition().duration(200).attr("transform", "translate(0,0)");
+        }
+
+        var state = d3.select(this);
+        var xy = getCentroid(state)
+        
+        state.transition().duration(200)
+            .style('fill', 'gold')
+            .attr("transform", "scale(1.9)translate("+(400-xy[0])+"," + (115-xy[1]) + ")")
+        
+        last = d3.select(this);
+        clickOn = true;
+      })
+};
+
+function getCentroid(selection) {
+  // get the DOM element from a D3 selection
+  // you could also use "this" inside .each()
+  var element = selection.node(),
+    // use the native SVG interface to get the bounding box
+    bbox = element.getBBox();
+  // return the center of the bounding box
+  return [bbox.x + bbox.width/2, bbox.y + bbox.height/2];
+}
+
+</script></textarea></live-code>
+
+    <p style="margin-top: 1130px;">Merge States:</p>
+      <live-code vert="true" h="500"><textarea><!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+
+.state.selected {
+  fill: orange;
+  stroke: #000;
+}
+</style>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500,
+    clickOn = false;
+
+var projection = d3.geo.albersUsa()
+      .scale(1000)
+      .translate([width /2, height / 2.2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+queue()
+    .defer(d3.json, "../d3-maps/state_pol.json")
+    .await(ready);
+
+var selected = d3.set([
+   25, 28, 12, 47 
+]);
+
+function ready (error, us) {
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) 
+    .enter().append("path")
+      .attr("class", function(d) {return d.id})
+      .attr("d", path);
+
+  svg.append("path")
+      .datum(topojson.merge(us, us.objects.state_pol.geometries.filter(function(d, i) { return selected.has(i); })))
+      .attr("class", "state selected")
+      .attr("d", path);  
+};
+</script></textarea></live-code>
+
+
+
+    </section> 
+    <section style="margin-top: 1100px;">
+    <h2>Additional Examples</h2>
+
+    <p><a href="http://www.ghggo.com/home" target="_blank">d3 + Google Maps</a>:
+      <iframe src="http://www.ghggo.com/GHGs_on_LA_freeways" height="550px" width="100%" style="margin-top: 20px;margin-bottom: 20px;" class="well"></iframe>
+    </p>
+
+    <p><a href="http://yuri.io/census/" target="_blank">d3 + Crossfilter</a>:
+      <iframe src="http://yuri.io/census/" height="750px" width="100%" style="margin-top: 20px;margin-bottom: 20px;" class="well"></iframe>
+    </p>
+
+    
+    <p><a href="https://github.com/pubnub/tweet-emotion" target="_blank">d3 + PubNub</a>:
+      <iframe src="http://pubnub.github.io/tweet-emotion/" height="750px" width="100%" style="margin-top: 20px;margin-bottom: 20px;" class="well"></iframe>
+    </p>
+    
+
+
+    </section>
+
+  <section>
+    <div style="width:100%">
+       <div style=" float:left;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../d3-maps" class="btn btn-success btn-lg"> <i class="fa fa-arrow-left fa-fw"></i><span class="network-name">Go Back</span></a>
+              </li>
+          </ul>
+        </div>
+        <div style=" float:right;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../" class="btn btn-success btn-lg"> <span class="network-name">Go Home</span><i class="fa fa-arrow-right fa-fw"></i></a>
+              </li>
+          </ul>
+        </div>
+    </div>
+  </section>
+ 
+
+  <div class="text-center">
+      <hr>
+      <p>Copyright &copy; Mike Taptich 2015... JK. Take what you want from here.</p>
+    </div>
+</body>
+</html>
