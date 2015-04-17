@@ -19,6 +19,9 @@
 
   </ul>
 
+
+  <h2>OGR2OGR & Topojson</h2>
+  <p>Download the Gdal library <a href="http://www.kyngchaos.com/software/frameworks#gdal_complete" target="_blank">here</a>. </p>
    <pre><code>ogr2ogr -f GeoJSON state_pol.json state_pol.shp
 topojson  -o state_pol_topo.json --properties STPOSTAL state_pol.json </code></pre>
 
