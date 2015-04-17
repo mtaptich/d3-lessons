@@ -19,4 +19,7 @@
 
   </ul>
 
+   <pre><code>ogr2ogr -f GeoJSON state_pol.json state_pol.shp
+topojson  -o state_pol_topo.json --properties STPOSTAL state_pol.json </code></pre>
+
 <p><a href="http://mtaptich.github.io/d3-lessons/" >Click to Begin!</button> </p>
