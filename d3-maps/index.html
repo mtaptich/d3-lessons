@@ -855,7 +855,6 @@ d3.json("state_pol.json", function(error, us) { // passes an error and object va
   svg.selectAll("path")
       .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
     .enter().append("path")
-      .attr("class", function(d) {return d.id})
       .attr("d", path)
 });
 </script></textarea></live-code>
@@ -874,7 +873,6 @@ d3.json("state_pol.json", function(error, us) { // passes an error and object va
     .selectAll("path")
       .data(topojson.feature(us, us.objects.state_pol).features) 
     .enter().append("path")
-      .attr("class", function(d) {return d.id})
       .attr("d", path)</code></pre>
       </p>
       <br>
@@ -917,7 +915,6 @@ d3.json("state_pol.json", function(error, us) { // passes an error and object va
     .selectAll("path")
       .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
     .enter().append("path")
-      .attr("class", function(d) {return d.id})
       .attr("d", path)
 });
 </script></textarea></live-code>
@@ -998,7 +995,6 @@ function ready(error, us, ports){ // passes an error and object variables for th
     .selectAll("path")
       .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
     .enter().append("path")
-      .attr("class", function(d) {return d.id})
       .attr("d", path)
 
     // map the GPS coordinates to 
@@ -1117,7 +1113,6 @@ function ready(error, us, ports){ // passes an error and object variables for th
     .selectAll("path")
       .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
     .enter().append("path")
-      .attr("class", function(d) {return d.id})
       .attr("d", path)
 
     // map the GPS coordinates to 
@@ -1295,7 +1290,6 @@ function ready(error, us, ports){ // passes an error and object variables for th
     .selectAll("path")
       .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
     .enter().append("path")
-      .attr("class", function(d) {return d.id})
       .attr("d", path)
 
     // map the GPS coordinates to 
@@ -1446,7 +1440,6 @@ function ready(error, us, ports){ // passes an error and object variables for th
     .selectAll("path")
       .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
     .enter().append("path")
-      .attr("class", function(d) {return d.id})
       .attr("d", path)
 
     // map the GPS coordinates to 
@@ -1488,10 +1481,6 @@ function ready(error, us, ports){ // passes an error and object variables for th
       .attr("dy", "-0.1em")
       .text(d3.format(".1s"));  
 };
-
-
-
-
 
 var zoom = d3.behavior.zoom()
   .on("zoom",function() {
