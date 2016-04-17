@@ -1,0 +1,262 @@
+<html ng-app="lessonapp">
+  <head>
+    <title>An introduction to d3.js</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script scr="../scripts/htmlmixed.js"></script>
+    <script src="../scripts/code_mirror.js"></script>
+    <script src="../scripts/color.js"></script>
+    <script src="../scripts/css.js"></script>
+    <script src="../scripts/xml.js"></script>
+    <script src="../scripts/lesson.js"></script>
+ 
+    <link href="../css/setosa.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/codemirror.css">
+    
+    
+    <style>
+    ul{font-size: 18px;}
+
+    table.center {
+        margin-left:auto; 
+        margin-right:auto;
+      }
+
+    </style>
+  </head>
+  <body ng-controller="main">
+    <section class="title">
+      <div class="title-region">
+        <h1 class="title">Live Coding D3.js</h1>
+        <h3 class="by-line">
+          <ul class="list-inline">
+            <li><a href="mailto:m.taptich@berkeley.edu"><i class="fa fa-envelope-o fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/MikeTaptich"><i class="fa fa-twitter fa-2x"></a></i></li>
+            <li><a href="http://www.linkedin.com/pub/michael-taptich/21/263/b28/"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+            <li><a href="https://github.com/mtaptich"><i class="fa fa-github fa-2x"></i></a></li>
+          </ul>
+        </h3>
+
+      </div>
+    </section>
+    <section>
+        
+      <p style=" font-weight: bold;"> Step 5: Add styling to the map. </p>
+      <p style="margin-bottom: 50px;">By default, each of the path elements will inherent a black ("#000000") fill and stroke. To update each of our US states, we can group all of the states together by appending the <code>SVG</code> "g" group element and give this the class attribute <span style="font-weigtht:bold;">land</span>.</p>
+
+      <p> CSS:
+       <pre class="highlight"><code class="javascript">.land {
+  fill: #eee;
+  stroke: #777777;
+}</code></pre>
+      </p>
+      <p> JavaScript:
+       <pre class="highlight"><code class="javascript">svg<span class="string">.append("g")
+      .attr("class", "land")</span>
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) 
+    .enter().append("path")
+      .attr("d", path)</code></pre>
+      </p>
+      <br>
+
+        <live-code vert="true" h="550"><textarea><!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Upload our topojson file, which is stored in the same folder as our index.html file
+d3.json("state_pol.json", function(error, us) { // passes an error and object variable
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("d", path)
+});
+</script></textarea></live-code>
+
+ <p style="margin-top: 1250px; font-weight: bold;"> Step 6: Add Data to the Map </p>
+        <p style=" margin-bottom: 50px;"> Now, let's add some data to this map! Download <a href="http://mtaptich.github.io/d3_live_code_2/ports_major.csv">this</a> CSV file listing the location of the top 150 ports in the United States, which was taken from the <a href="http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/index.html" target="_blank">National Transportation Atlas Database</a>. I converted the original file from .shp to .csv using <code>ogr2ogr</code> because this is a more familiar data format among beginners. </p>
+
+        <p>As data files are requested asynchronously by JavaScript, the order in which different data layers are loaded is unpredictable. For instance, you may call for a map to have a set of countries as the bottom layer and the names of each country layered on top of this. You would first load the "country" path elements and then load the "country name" text elements. However, if your browser first is able to load the text before the paths due to discrepancies in file sizes (e.g., path is WAY bigger than text), the text will render first.  </p>
+
+        <p>To address this issue, I recommend using d3's <code>queue</code> library and defer manipulating the imported data <em>until ALL of the data is loaded to the web browser</em>. Once the code is ready, a callback fuction is triggered, passing an error variable and a variable for the data packets, in order respectively.</p>
+        <pre class="highlight"><code class="javascript">&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span><span class="string">http://d3js.org/queue.v1.min.js</span><span class="pl-pds">"</span></span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</code></pre>
+        <pre class="highlight"><code class="javascript">// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+<span class="string">function ready(error, us, ports){</span></code></pre>
+
+        <div class="col-xs-12 well">
+            <div class="row">
+                <div class="col-xs-12"  style="background-color: none;">
+                    <iframe id="map_data" scrolling ="no" frameborder="0" height="500px" width="100%"></iframe> 
+                   
+                </div>
+                <div class="col-xs-12" style="background-color: #fff;">
+                <textarea id="map_us_data" name="map_us_data" >
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+.ports{
+    fill:red;
+    fill-opacity: 0.3;
+    stroke-width: 1px;
+    stroke: red;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Create a scale that maps total tonnage to a radius size between 2 and 30 pixels
+var port_size = d3.scale.sqrt().domain([0, 252070000]).range([2,30]);
+
+// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+function ready(error, us, ports){ // passes an error and object variables for the states and ports
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("d", path)
+
+    // map the GPS coordinates to 
+  svg.append("g")
+    .selectAll("circle")
+   .data(ports).enter()
+    .append("circle")
+    .attr("class", "ports")
+    .attr("cx", function(d) {
+           return projection([d["long"], d["lat"] ])[0]; // return x location on svg
+           })
+    .attr("cy", function(d) {
+           return projection([d["long"],d["lat"] ])[1]; // return y location on svg
+           })
+    .attr("r", function(d){ return port_size(+d.TOTAL)});    
+};
+
+</script>
+                </textarea>
+                <script>
+                  var delay4;
+                  // Initialize CodeMirror editor with a nice html5 canvas demo.
+                  var editor4 = CodeMirror.fromTextArea(document.getElementById('map_us_data'), {
+                    lineNumbers: true,
+                    mode: 'text/html'
+                  });
+        
+                  editor4.on("change", function() {
+                    clearTimeout(delay4);
+                    delay4 = setTimeout(updatePreview4, 300);
+                  });
+                  
+                  function updatePreview4() {
+                    var previewFrame4 = document.getElementById('map_data');
+                    var preview4 =  previewFrame4.contentDocument ||  previewFrame4.contentWindow.document;
+                    preview4.open();
+                    preview4.write(editor4.getValue());
+                    preview4.close();
+                  }
+                  setTimeout(updatePreview4, 300);
+                </script> 
+                </div>
+            </div>
+        </div>
+
+        
+  </section>
+  
+
+  <section>
+    <div style="width:100%">
+       <div style=" float:left;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../d3-maps-live-code" class="btn btn-success btn-lg"> <i class="fa fa-arrow-left fa-fw"></i><span class="network-name">Go Back</span></a>
+              </li>
+          </ul>
+        </div>
+        <div style=" float:right;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../d3-maps-live-code-2" class="btn btn-success btn-lg"> <span class="network-name">Continue</span><i class="fa fa-arrow-right fa-fw"></i></a>
+              </li>
+          </ul>
+        </div>
+    </div>
+  </section>
+ 
+
+  <div class="text-center">
+      <hr>
+      <p>Copyright &copy; Mike Taptich 2015... JK. Take what you want from here.</p>
+    </div>
+</body>
+</html>

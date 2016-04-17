@@ -1,0 +1,537 @@
+<html ng-app="lessonapp">
+  <head>
+    <title>An introduction to d3.js</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script scr="../scripts/htmlmixed.js"></script>
+    <script src="../scripts/code_mirror.js"></script>
+    <script src="../scripts/color.js"></script>
+    <script src="../scripts/css.js"></script>
+    <script src="../scripts/xml.js"></script>
+    <script src="../scripts/lesson.js"></script>
+ 
+    <link href="../css/setosa.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/codemirror.css">
+    
+    
+    <style>
+    ul{font-size: 18px;}
+
+    table.center {
+        margin-left:auto; 
+        margin-right:auto;
+      }
+
+    </style>
+  </head>
+  <body ng-controller="main">
+    <section class="title">
+      <div class="title-region">
+        <h1 class="title">Live Coding D3.js</h1>
+        <h3 class="by-line">
+          <ul class="list-inline">
+            <li><a href="mailto:m.taptich@berkeley.edu"><i class="fa fa-envelope-o fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/MikeTaptich"><i class="fa fa-twitter fa-2x"></a></i></li>
+            <li><a href="http://www.linkedin.com/pub/michael-taptich/21/263/b28/"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+            <li><a href="https://github.com/mtaptich"><i class="fa fa-github fa-2x"></i></a></li>
+          </ul>
+        </h3>
+
+      </div>
+    </section>
+    <section>
+        
+       
+        <p style=" font-weight: bold;"> Step 7: Allow the User to Zoom </p>
+        <p style=" margin-bottom: 50px;"> Add the zoom function used in the first examples to allow users to inspect portions of our map with greater resolution. </p>
+
+        <pre class="highlight"><code class="javascript">var zoom = d3.behavior.zoom()
+  .on("zoom",function() {
+    // Using d3 mouse events, dynamically update translation and scale.
+    svg.selectAll("g").attr("transform","translate("+ 
+        d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+});
+
+svg.call(zoom);</code></pre>
+
+        <div class="col-xs-12 well">
+            <div class="row">
+                <div class="col-xs-12"  style="background-color: none;">
+                    <iframe id="map_data_2" scrolling ="no" frameborder="0" height="500px" width="100%"></iframe> 
+                   
+                </div>
+                <div class="col-xs-12" style="background-color: #fff;">
+                <textarea id="map_us_data_2" name="map_us_data_2" >
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+.ports{
+    fill:red;
+    fill-opacity: 0.3;
+    stroke-width: 1px;
+    stroke: red;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+// Create a scale that maps total tonnage to a radius size between 2 and 30 pixels
+var port_size = d3.scale.sqrt().domain([0, 252070000]).range([2,30]);
+
+// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+function ready(error, us, ports){ // passes an error and object variables for the states and ports
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("d", path)
+
+    // map the GPS coordinates to 
+  svg.append("g")
+    .selectAll("circle")
+   .data(ports).enter()
+    .append("circle")
+    .attr("class", "ports")
+    .attr("cx", function(d) {
+           return projection([d["long"], d["lat"] ])[0]; // return x location on svg
+           })
+    .attr("cy", function(d) {
+           return projection([d["long"],d["lat"] ])[1]; // return y location on svg
+           })
+    .attr("r", function(d){ return port_size(+d.TOTAL)});    
+};
+
+var zoom = d3.behavior.zoom()
+  .on("zoom",function() {
+    // Using d3 mouse events, dynamically update translation and scale.
+    svg.selectAll("g").attr("transform","translate("+ 
+        d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+});
+
+svg.call(zoom); 
+
+</script>
+                </textarea>
+                <script>
+                  var delay5;
+                  // Initialize CodeMirror editor with a nice html5 canvas demo.
+                  var editor5 = CodeMirror.fromTextArea(document.getElementById('map_us_data_2'), {
+                    lineNumbers: true,
+                    mode: 'text/html'
+                  });
+        
+                  editor5.on("change", function() {
+                    clearTimeout(delay5);
+                    delay5 = setTimeout(updatePreview5, 300);
+                  });
+                  
+                  function updatePreview5() {
+                    var previewFrame5 = document.getElementById('map_data_2');
+                    var preview5 =  previewFrame5.contentDocument ||  previewFrame5.contentWindow.document;
+                    preview5.open();
+                    preview5.write(editor5.getValue());
+                    preview5.close();
+                  }
+                  setTimeout(updatePreview5, 300);
+                </script> 
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top: 1150px;  font-weight: bold;"> Step 8: Add Tooltips </p>
+        <p > We can provide further interactions between the user and our data by including a tooltip function. Tooltips allow you to display element-specific data in conjunction with different mouse events (e.g., hover, click, etc.).  Check out the quick example below:</p>
+
+        <live-code wincol="4"><textarea><!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+
+text {
+  font: 10px sans-serif;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+  var svg = d3.select("body").append("svg")
+              .attr('width', 300 )
+              .attr('height', 300);
+
+  var tooltip = d3.select("body")
+              .append("div")
+              .style("position", "absolute")
+              .style("z-index", "10")
+              .style("visibility", "hidden")
+              .style("color", "white")
+              .style("padding", "8px")
+              .style("background-color", "rgba(0, 0, 0, 0.75)")
+              .style("border-radius", "6px")
+              .style("font", "12px sans-serif")
+              .text("tooltip");
+
+  var ages = [{"age": 28, "x": 20, "y": 40}, {"age": 18, "x": 60, "y": 80}, {"age": 38, "x": 100, "y": 120}];
+
+  var circle = svg.selectAll("circle")
+            .data(ages).enter()
+              .append("circle")
+              .attr("cx", function(d){ return d.x})
+              .attr('cy', function(d){ return d.y})
+              .attr('r', 10)
+              .on("mouseover", function(d) {
+                      tooltip.text( "Age : " + d.age +" years old");
+                      tooltip.style("visibility", "visible");
+              })
+              .on("mousemove", function() {
+                  return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+              })
+              .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+
+</script>
+</html></textarea></live-code>
+
+        <p style="margin-top: 550px; "> Now, add a tooltip to display information regarding the amount of tonnage exchanges at each port per year.  </p>
+
+        <live-code vert="true" h="550"><textarea><!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+.ports{
+    fill:red;
+    fill-opacity: 0.3;
+    stroke-width: 1px;
+    stroke: red;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .style("color", "white")
+    .style("padding", "8px")
+    .style("background-color", "rgba(0, 0, 0, 0.75)")
+    .style("border-radius", "6px")
+    .style("font", "12px sans-serif")
+    .text("tooltip");
+
+// Create a scale that maps total tonnage to a radius size between 2 and 30 pixels
+var port_size = d3.scale.sqrt().domain([0, 252070000]).range([2,30]);
+
+// Create a scientific number format
+var scinum = d3.format(".1e");
+
+// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+function ready(error, us, ports){ // passes an error and object variables for the states and ports
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("d", path)
+
+    // map the GPS coordinates to 
+  svg.append("g")
+    .selectAll("circle")
+   .data(ports).enter()
+    .append("circle")
+    .attr("class", "ports")
+    .attr("cx", function(d) {
+           return projection([d["long"], d["lat"] ])[0]; // return x location on svg
+           })
+    .attr("cy", function(d) {
+           return projection([d["long"],d["lat"] ])[1]; // return y location on svg
+           })
+    .attr("r", function(d){ return port_size(+d.TOTAL)})
+    .on("mouseover", function(d) {
+                      console.log(d);
+                      tooltip.text( "Total : " + scinum(d.TOTAL) +" tons per year" );
+                      tooltip.style("visibility", "visible");
+              })
+              .on("mousemove", function() {
+                  return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+              })
+              .on("mouseout", function(){return tooltip.style("visibility", "hidden");});    
+};
+
+var zoom = d3.behavior.zoom()
+  .on("zoom",function() {
+    // Using d3 mouse events, dynamically update translation and scale.
+    svg.selectAll("g").attr("transform","translate("+ 
+        d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+});
+
+svg.call(zoom); 
+
+</script>
+        </textarea></live-code>
+
+        <p style="margin-top: 1250px;  font-weight: bold;"> Step 9: Add a Legend </p>
+        <p>To finalize you map, you map want to apply a <a href="http://bost.ocks.org/mike/bubble-map/" target="_blank">legend</a> to give the user a sense of scale. </p>
+
+        <p>CSS:
+        <pre class="highlight"><code class="javascript">.legend circle {
+  fill: none;
+  stroke: #ccc;
+}
+
+.legend text {
+  fill: #777;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}</code></pre>
+
+      <p>Javascript:
+        <pre class="highlight"><code class="javascript">var legend = svg.append("g")
+      .attr("class", "legend")
+      .attr("transform", "translate(" + (width - 80) + "," + (height - 20) + ")")
+    .selectAll("g")
+      .data([1e6, 5e7, 3e8])
+    .enter().append("g");
+
+  legend.append("circle")
+      .attr("cy", function(d) { return -1*port_size(d); })
+      .attr("r", port_size);
+
+  legend.append("text")
+      .attr("y", function(d) { return -2*port_size(d); })
+      .attr("dy", "-0.1em")
+      .text(d3.format(".1s"));  
+</code></pre>
+
+        <live-code vert="true" h="550"><textarea><!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.land {
+  fill: #eee;
+  stroke: #777777;
+}
+.ports{
+    fill:red;
+    fill-opacity: 0.3;
+    stroke-width: 1px;
+    stroke: red;
+}
+
+.legend circle {
+  fill: none;
+  stroke: red;
+}
+
+.legend text {
+  fill: #777;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script> <!-- optional, depending on projection -->
+<script>
+
+var width = 960,
+    height = 500;
+
+var projection = d3.geo.conicConformal()
+    .rotate([98, 0])
+    .center([0, 38])
+    .parallels([29.5, 45.5])
+    .scale(1000) // Change to 300 to zoom out
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .style("color", "white")
+    .style("padding", "8px")
+    .style("background-color", "rgba(0, 0, 0, 0.75)")
+    .style("border-radius", "6px")
+    .style("font", "12px sans-serif")
+    .text("tooltip");
+
+// Create a scale that maps total tonnage to a radius size between 2 and 30 pixels
+var port_size = d3.scale.sqrt().domain([0, 252070000]).range([2,30]);
+
+// Create a scientific number format
+var scinum = d3.format(".1e");
+
+// Load all our data at once using queue.js
+queue()
+    .defer(d3.json, "state_pol.json")
+    .defer(d3.csv, "ports_major.csv")
+    .await(ready);
+
+function ready(error, us, ports){ // passes an error and object variables for the states and ports
+  svg.append("g")
+      .attr("class", "land")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.state_pol).features) // us.objects.state_pol cooresponds to the original file name, state_pol.shp
+    .enter().append("path")
+      .attr("d", path)
+
+    // map the GPS coordinates to 
+  svg.append("g")
+    .selectAll("circle")
+   .data(ports).enter()
+    .append("circle")
+    .attr("class", "ports")
+    .attr("cx", function(d) {
+           return projection([d["long"], d["lat"] ])[0]; // return x location on svg
+           })
+    .attr("cy", function(d) {
+           return projection([d["long"],d["lat"] ])[1]; // return y location on svg
+           })
+    .attr("r", function(d){ return port_size(+d.TOTAL)})
+    .on("mouseover", function(d) {
+                      console.log(d);
+                      tooltip.text( "Total : " + scinum(d.TOTAL) +" tons per year" );
+                      tooltip.style("visibility", "visible");
+              })
+              .on("mousemove", function() {
+                  return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");
+              })
+              .on("mouseout", function(){return tooltip.style("visibility", "hidden");});  
+
+  var legend = svg.append("g")
+      .attr("class", "legend")
+      .attr("transform", "translate(" + (width - 80) + "," + (height - 20) + ")")
+    .selectAll("g")
+      .data([1e6, 5e7, 2.5e8])
+    .enter().append("g");
+
+  legend.append("circle")
+      .attr("cy", function(d) { return -1*port_size(d); })
+      .attr("r", port_size);
+
+  legend.append("text")
+      .attr("y", function(d) { return -2*port_size(d); })
+      .attr("dy", "-0.1em")
+      .text(d3.format(".1s"));  
+};
+
+var zoom = d3.behavior.zoom()
+  .on("zoom",function() {
+    // Using d3 mouse events, dynamically update translation and scale.
+    svg.selectAll("g").attr("transform","translate("+ 
+        d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+});
+
+svg.call(zoom); 
+
+</script>
+        </textarea></live-code>
+
+  <p style="margin-top: 1250px; font-weight:bold;"> Step 10: <a href="http://nytimes.github.io/svg-crowbar/" target="_blank">Save your figure(s) for publications?</a></p>
+  <p><span>Drag this link to your bookmarks bar for later usage: &nbsp;</span><a class="bookmarklet ver2" href="javascript:javascript: (function () { var e = document.createElement('script'); e.setAttribute('src', 'https://nytimes.github.io/svg-crowbar/svg-crowbar-2.js'); e.setAttribute('class', 'svg-crowbar'); document.body.appendChild(e); })();">SVG Crowbar 2</a>.  </p>
+
+  </section>
+  
+
+  <section>
+    <div style="width:100%">
+       <div style=" float:left;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../d3-maps-live-code-1" class="btn btn-success btn-lg"> <i class="fa fa-arrow-left fa-fw"></i><span class="network-name">Go Back</span></a>
+              </li>
+          </ul>
+        </div>
+        <div style=" float:right;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../d3-extras" class="btn btn-success btn-lg"> <span class="network-name">Extras!</span><i class="fa fa-arrow-right fa-fw"></i></a>
+              </li>
+          </ul>
+        </div>
+    </div>
+  </section>
+ 
+
+  <div class="text-center">
+      <hr>
+      <p>Copyright &copy; Mike Taptich 2015... JK. Take what you want from here.</p>
+    </div>
+</body>
+</html>
