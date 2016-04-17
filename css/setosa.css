@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 html {
-  background-color: #fcfcfa;
+  background-color: #fff;
    -webkit-font-smoothing: antialiased;
 }
 body {
@@ -18,7 +18,7 @@ body {
   font-weight: 300;
   line-height: 33px;
   -webkit-font-smoothing: antialiased;
-  background-color: #fcfcfa;
+  background-color: #fff;
 
 }
 
