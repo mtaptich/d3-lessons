@@ -1,0 +1,130 @@
+<html ng-app="lessonapp">
+  <head>
+    <title>An introduction to d3.js</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.min.js"></script>
+
+    <script scr="../scripts/htmlmixed.js"></script>
+    <script src="../scripts/code_mirror.js"></script>
+    <script src="../scripts/color.js"></script>
+    <script src="../scripts/css.js"></script>
+    <script src="../scripts/xml.js"></script>
+    <script src="../scripts/lesson.js"></script>
+ 
+    <link href="../css/setosa.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/codemirror.css">
+    
+    <style>
+    #wrap { width: 100%; height: 500px; padding: 0; overflow: hidden; }
+ 
+
+    #healthandwealth{
+      -ms-zoom: 0.8;
+        -moz-transform: scale(0.8);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.8);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.8);
+        -webkit-transform-origin: 0 0;
+    }
+    </style>
+  </head>
+  <body ng-controller="main">
+    <section class="title">
+      <div class="title-region">
+        <h1 class="title">Live Coding D3.js</h1>
+        <h3 class="by-line">
+          <ul class="list-inline">
+            <li><a href="mailto:m.taptich@berkeley.edu"><i class="fa fa-envelope-o fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/MikeTaptich"><i class="fa fa-twitter fa-2x"></a></i></li>
+            <li><a href="http://www.linkedin.com/pub/michael-taptich/21/263/b28/"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+            <li><a href="https://github.com/mtaptich"><i class="fa fa-github fa-2x"></i></a></li>
+          </ul>
+        </h3>
+
+      </div>
+    </section>
+    <section>
+   
+      <h2>My Coding Philosophy</h2>
+      <br>
+      <p>I am a firm believer in coding with a purpose. When you are first starting off learning JavaScript, you may want to learn <em>everything</em> there is to learn about the language (broad). I suggest that you instead only pick up the pieces of code you need in order to complete some bigger project (narrow).</p> 
+
+      <p>To give you a glimpse of what you could do in d3, check out <a href="https://github.com/mbostock/d3/wiki/Gallery" target="_blank">Mike Bostock's github repo</a>, <a href="http://christopheviau.com/d3list/" target="_blank">Christopher Viau's well-curated repository</a>, or one of the many examples provided at <a href="http://bl.ocks.org/" target='_blank'>bl.ocks.org/</a>. The last link is by far your best resource as a beginner because the data visualizations are shown with their respective source code. Below, I embedded some of examples that showcase the capabilities of d3.js. </p>
+
+
+      <div style="width: 960px"><div style="position: relative; padding: 0px; width: 960px; height: 1000px"><div style="position: absolute; padding: 0px; width: 960.0px; height: 1000.0px"><iframe marginheight="0" marginwidth="0" sandbox="allow-scripts" allowtransparency="true" scrolling="no" src="https://gist.pagelet.io/mbostock/4063663/raw/4115883d922805b3b0b8d16cfb8fcd283381552a/index.html" style="width: 100%; height: 100%; border: 0px solid #CCC; border-radius: 4px; overflow: hidden"></iframe></div><a href="https://gist.github.com/mbostock/4063663/4115883d922805b3b0b8d16cfb8fcd283381552a"><img data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="pagelet-ribbon" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" style="position: absolute; top: 0px; right: 0px; border: 0" /></a></div><div><p>Via <a href="https://github.com/mbostock">mbostock's</a> <a href="https://gist.github.com/mbostock/4063663/4115883d922805b3b0b8d16cfb8fcd283381552a">gist</a>.</p></div></div>
+
+      <div style="width: 960px"><div style="position: relative; padding: 0px; width: 960px; height: 500px"><div style="position: absolute; padding: 0px; width: 960.0px; height: 500.0px"><iframe marginheight="0" marginwidth="0" sandbox="allow-scripts" allowtransparency="true" scrolling="no" src="https://gist.pagelet.io/rkirsling/5001347/raw/8343076d5630a0d4759e47877f4735871651cd79/index.html" style="width: 100%; height: 100%; border: 0px solid #CCC; border-radius: 4px; overflow: hidden"></iframe></div><a href="https://gist.github.com/rkirsling/5001347/8343076d5630a0d4759e47877f4735871651cd79"><img data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="pagelet-ribbon" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" style="position: absolute; top: 0px; right: 0px; border: 0" /></a></div><div><p>Via <a href="https://github.com/rkirsling">rkirsling's</a> <a href="https://gist.github.com/rkirsling/5001347/8343076d5630a0d4759e47877f4735871651cd79">gist</a>.</p></div></div>
+
+     <div style="width: 960px"><div style="position: relative; padding: 0px; width: 960px; height: 580px"><div style="position: absolute; padding: 0px; width: 1200.0px; height: 725.0px; ms-zoom: 0.8; transform: scale(0.8); moz-transform: scale(0.8); o-transform: scale(0.8); webkit-transform: scale(0.8); transform-origin: 0 0; moz-transform-origin: 0 0; o-transform-origin: 0 0; webkit-transform-origin: 0 0"><iframe marginheight="0" marginwidth="0" sandbox="allow-scripts" allowtransparency="true" scrolling="no" src="https://gist.pagelet.io/mbostock/6619561/raw/aa2a84461581a602e69cc0515a27b790fecec9bc/index.html" style="width: 100%; height: 100%; border: 0px solid #CCC; border-radius: 4px; overflow: hidden"></iframe></div><a href="https://gist.github.com/mbostock/6619561/aa2a84461581a602e69cc0515a27b790fecec9bc"><img data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="pagelet-ribbon" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" style="position: absolute; top: 0px; right: 0px; border: 0" /></a></div><div><p>Via <a href="https://github.com/mbostock">mbostock's</a> <a href="https://gist.github.com/mbostock/6619561/aa2a84461581a602e69cc0515a27b790fecec9bc">gist</a>.</p></div></div>
+
+     <div style="width: 960px"><div style="position: relative; padding: 0px; width: 960px; height: 500px"><div style="position: absolute; padding: 0px; width: 1066.7px; height: 555.6px; ms-zoom: 0.9; transform: scale(0.9); moz-transform: scale(0.9); o-transform: scale(0.9); webkit-transform: scale(0.9); transform-origin: 0 0; moz-transform-origin: 0 0; o-transform-origin: 0 0; webkit-transform-origin: 0 0"><iframe marginheight="0" marginwidth="0" sandbox="allow-scripts" allowtransparency="true" scrolling="no" src="https://gist.pagelet.io/llb4ll/8709363/raw/e4dd7f4a6d64204ebb3667f36e7209ebfa63e27a/index.html" style="width: 100%; height: 100%; border: none; overflow: hidden"></iframe></div><a href="https://gist.github.com/llb4ll/8709363/e4dd7f4a6d64204ebb3667f36e7209ebfa63e27a"><img data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="pagelet-ribbon" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" style="position: absolute; top: 0px; right: 0px; border: 0" /></a></div><div><p>Via <a href="https://github.com/llb4ll">llb4ll's</a> <a href="https://gist.github.com/llb4ll/8709363/e4dd7f4a6d64204ebb3667f36e7209ebfa63e27a">gist</a>.</p></div></div>
+
+     <div style="width: 960px"><div style="position: relative; padding: 0px; width: 960px; height: 500px"><div style="position: absolute; padding: 0px; width: 1200.0px; height: 625.0px; ms-zoom: 0.8; transform: scale(0.8); moz-transform: scale(0.8); o-transform: scale(0.8); webkit-transform: scale(0.8); transform-origin: 0 0; moz-transform-origin: 0 0; o-transform-origin: 0 0; webkit-transform-origin: 0 0"><iframe marginheight="0" marginwidth="0" sandbox="allow-scripts" allowtransparency="true" scrolling="no" src="https://gist.pagelet.io/mtaptich/a7d591b09196f21983fc/raw/c3ef7a9b11007725825bc9525bb6bee1ebcfe11c/index.html" style="width: 100%; height: 100%; border: 0px solid #CCC; border-radius: 4px; overflow: hidden"></iframe></div><a href="https://gist.github.com/mtaptich/a7d591b09196f21983fc/c3ef7a9b11007725825bc9525bb6bee1ebcfe11c"><img data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" class="pagelet-ribbon" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" style="position: absolute; top: 0px; right: 0px; border: 0" /></a></div><div><p>Via <a href="https://github.com/mtaptich">mtaptich's</a> <a href="https://gist.github.com/mtaptich/a7d591b09196f21983fc/c3ef7a9b11007725825bc9525bb6bee1ebcfe11c">gist</a>.</p></div></div>
+
+
+      <p>I also want to share some more notable examples of using d3.js as a means to explain multi-dimensional data in an interactive manner:</p>
+      <ul>
+        <li>Victor Powell's visual explanation of the <a href="http://setosa.io/pythagorean/" target="_blank">Pythagorean Theorem</a>.</li>
+        <li>Anything that <a href="http://bost.ocks.org/mike/" target="_blank">Mike Bostock</a> creates <a href="http://bl.ocks.org/mbostock" target="_blank">as examples</a> or some of his interactive visualizations while working for the <a href="http://www.nytimes.com/interactive/2013/09/25/sports/americas-cup-course.html" target="_blank">New York Times</a></li>
+        <li><a href="http://air.nullschool.net/" target="_blank">This</a> crazy map showing wind speeds in Tokyo, Japan.</li>
+        <li>Mike Barry and Brian Card's visualizations of <a href="http://mbtaviz.github.io/" target="_blank">subway ridership in Boston</a>.</li>
+        <li>Square's crazy fast <a href="http://square.github.io/crossfilter/" target="_blank">filtering library</a> applied to airplaine data.</li>
+        <li>For the life of me, I can't find the original source, but creating networks using click and drag mouse events (<a href="http://ce11gsi.appspot.com/stylesheets/process_LCA.html" target="_blank">I used this in one of my engineering classes as an example</a>). </li>
+        <li><a href="http://bost.ocks.org/mike/nations/" target="_blank">Wealth and Health of Nations</a> by Mike Bostock again but made famous by <a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen" target="_blank">Tom Carden of Gapminder</a>.  </li>
+    
+        <li>This way of visualizing multivariate data by <a href="http://benjiec.github.io/scatter-matrix/demo/demo.html" target="_blank">benjiec</a>.</li>
+        <li>Gridlock vs. bottlenecks explained by <a href="http://setosa.io/blog/2014/09/02/gridlock/" target="_blank">Lewis Lehe</a>.</li>
+        <li>Jason Davies animated <a href="http://www.jasondavies.com/animated-bezier/" target="_blank">Bezier</a> curves. </li>
+        <li>All the <a href="https://github.com/mbostock/d3/wiki/Gallery#basic-charts" target="_blank">basic charts</a> that I use in my research from the d3.js example page.</li>
+        
+      </ul>
+      <br>
+      <p>With all this background, you should have the basic tools to start making data visualizations.</p>
+
+
+  </section>
+ 
+<section style="margin-top: 30px;">
+    <div style="width:100%">
+       <div style=" float:left;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../browser-console" class="btn btn-success btn-lg"> <i class="fa fa-arrow-left fa-fw"></i><span class="network-name">Go Back</span></a>
+              </li>
+          </ul>
+        </div>
+        <div style=" float:right;">
+          <ul class='list-inline intro-social-buttons' >
+             <li>
+              <a href="../d3-basics" class="btn btn-success btn-lg"> <span class="network-name">Next Lesson!</span><i class="fa fa-arrow-right fa-fw"></i></a>
+              </li>
+          </ul>
+        </div>
+    </div>
+  </section>
+
+
+ 
+
+
+  
+           
+    <div class="text-center">
+      <hr>
+      <p>Copyright &copy; Mike Taptich 2015... JK. Take what you want from here.</p>
+    </div>
+       
+ 
+
+ <!-- Core JavaScript Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  </body>
+</html>
