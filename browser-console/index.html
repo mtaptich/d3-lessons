@@ -66,10 +66,27 @@ a*4
         <li>To log variable values in the console, all you need to do is add <code>console.log({some value})</code> to your Javascript code</li>
       </ul>
       <br>
+      <p><a href="http://docs.webplatform.org/wiki/dom" target="_blank"> Document Object Model (DOM) tree</a>:</p>
+      <ul>
+        <li> The DOM is a convention for representing and interacting with objects in HTML, XHTML, and XML documents.</li>
+        <li>Think of it as a tree of parent and child nodes.</li>
+        <li>When a web page is loaded, the browser creates a DOM of the page. </li>
+        <li>Your browser treats each element of the DOM as an object. With the object model, JavaScript is fully enabled to create dynamic HTML.</li>
+        <li>In the GIF below, I show an example of d3.js updating elements of the DOM. In particulr, d3.js updates the locations of the circles when an event is triggered. More on this later.</li>
+      </ul>
+      <p> <img src="side_doc_update.gif"></p>
+      <br>
       <p><a href="http://bl.ocks.org/mbostock/5247027" target="_blank"> Mouse Events</a>:</p>
+      <p>
+        <ul>
+          <li>The coordinate system for the browser has a x,y origin in the upper lefthand corner of the page.</li>
+          <li>The browser can detect when your cursor (e.g., mouse) interacts with elements in the DOM.</li>
+        </ul>
+      </p>
+      
       <div class="container">
+       <p>Below, I show a range of mouse events capable using JavaScript. Mouse over the image below and see the logged mouse coordinates associated with each mouse event.</p>
         <div class="col-xs-12">
-          <p> Mouse over the image below and see the logged mouse coordinates associated with each mouse event.</p>
           <img src="../img/square.png"
            ng-mousedown="onMouseDown($event)"
            ng-mouseup="onMouseUp($event)"
@@ -91,7 +108,7 @@ a*4
           <strong>mouseover:</strong> {{onMouseOverResult}} <br/>
         </div>
       </div>
- 
+
    
   </section>
  
